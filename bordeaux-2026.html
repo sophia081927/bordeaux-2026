@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vignes du Soleil · 圣埃美隆骑士盛宴 · 2026 波尔多葡萄采收开幕庆典</title>
+
+<!-- SEO -->
+<meta name="description" content="加入圣埃美隆骑士团（Jurade de Saint-Émilion），赴 2026 法国波尔多葡萄采收开幕庆典与贵族骑士古法盛宴，入住百年庄园，开启三日庄园之旅。三档会员方案，限量名额。">
+<meta name="keywords" content="圣埃美隆骑士团,Jurade de Saint-Émilion,波尔多,葡萄采收,贵族骑士盛宴,法国庄园游,葡萄酒会员,Vignes du Soleil">
+<meta name="theme-color" content="#3a0c16">
+
+<!-- 社交分享卡片（微信/朋友圈/Facebook 等链接预览） -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vignes du Soleil · 圣埃美隆骑士盛宴">
+<meta property="og:description" content="赴 2026 法国波尔多葡萄采收开幕庆典与贵族骑士古法盛宴，入住百年庄园，开启三日庄园之旅。成为会员，即享尊荣。">
+<meta property="og:image" content="images/ceremony-1.jpg">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vignes du Soleil · 圣埃美隆骑士盛宴">
+<meta name="twitter:description" content="2026 波尔多葡萄采收开幕庆典 · 贵族骑士盛宴 · 三日庄园之旅。成为会员即可参加。">
+<meta name="twitter:image" content="images/ceremony-1.jpg">
+<style>
+  :root{
+    --wine:#5b1422;
+    --wine-deep:#3a0c16;
+    --gold:#c9a24b;
+    --gold-soft:#e3c885;
+    --cream:#f6efe3;
+    --ink:#2b1d1a;
+    --paper:#fbf7f0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Songti SC","STSong","Noto Serif SC",Georgia,"Times New Roman",serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-weight:600;letter-spacing:.04em}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  /* ============ NAV ============ */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 36px;
+    background:rgba(58,12,22,.86);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(201,162,75,.35);
+  }
+  nav .brand{color:var(--gold-soft);font-size:20px;letter-spacing:.18em;font-weight:600}
+  nav .links{display:flex;gap:28px;font-size:14px}
+  nav .links a{color:var(--cream);opacity:.85;transition:opacity .2s,color .2s}
+  nav .links a:hover{opacity:1;color:var(--gold-soft)}
+  @media(max-width:760px){nav .links{display:none}}
+
+  /* ============ HERO ============ */
+  .hero{
+    min-height:100vh;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;
+    padding:120px 28px 80px;
+    color:var(--cream);
+    background:
+      linear-gradient(rgba(40,8,16,.74),rgba(29,6,12,.88)),
+      url("images/ceremony-1.jpg") center/cover no-repeat,
+      radial-gradient(circle at 30% 20%, #7a2233 0%, transparent 55%),
+      linear-gradient(135deg,#3a0c16,#1d060c);
+    position:relative;
+  }
+  .hero .eyebrow{
+    font-size:14px;letter-spacing:.4em;color:var(--gold-soft);
+    text-transform:uppercase;margin-bottom:26px;
+  }
+  .hero h1{
+    font-size:clamp(34px,6vw,68px);line-height:1.25;
+    text-shadow:0 2px 18px rgba(0,0,0,.4);
+  }
+  .hero h1 .accent{color:var(--gold-soft)}
+  .hero .sub{
+    margin:28px auto 0;max-width:640px;
+    font-size:clamp(16px,2.2vw,20px);opacity:.92;font-weight:300;
+  }
+  .hero .year-badge{
+    margin-top:18px;font-size:15px;letter-spacing:.3em;color:var(--gold);
+  }
+  .cta-row{margin-top:44px;display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+  .btn{
+    display:inline-block;padding:15px 38px;font-size:16px;letter-spacing:.1em;
+    border-radius:2px;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;
+  }
+  .btn-gold{
+    background:linear-gradient(135deg,var(--gold),var(--gold-soft));
+    color:var(--wine-deep);font-weight:600;border:none;
+    box-shadow:0 6px 22px rgba(201,162,75,.35);
+  }
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,162,75,.5)}
+  .btn-ghost{border:1px solid var(--gold-soft);color:var(--gold-soft);background:transparent}
+  .btn-ghost:hover{background:rgba(227,200,133,.12)}
+  .scroll-hint{
+    position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+    font-size:12px;letter-spacing:.3em;color:var(--gold-soft);opacity:.7;
+    animation:bob 2s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+  /* ============ SECTIONS ============ */
+  section{padding:90px 0}
+  .section-head{text-align:center;margin-bottom:58px}
+  .section-head .kicker{
+    font-size:13px;letter-spacing:.34em;color:var(--gold);text-transform:uppercase;
+  }
+  .section-head h2{font-size:clamp(28px,4vw,40px);color:var(--wine);margin-top:14px}
+  .section-head .rule{
+    width:60px;height:2px;margin:22px auto 0;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  .lead{max-width:760px;margin:22px auto 0;text-align:center;font-size:18px;color:#4a342f}
+
+  .alt{background:linear-gradient(180deg,#fff,var(--cream))}
+
+  /* ============ HIGHLIGHTS / CARDS ============ */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px}
+  .card{
+    background:#fff;border:1px solid rgba(201,162,75,.3);
+    border-radius:4px;padding:34px 30px;
+    box-shadow:0 4px 24px rgba(58,12,22,.06);
+    transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden;
+  }
+  .card::before{
+    content:"";position:absolute;top:0;left:0;width:100%;height:4px;
+    background:linear-gradient(90deg,var(--wine),var(--gold));
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 14px 40px rgba(58,12,22,.14)}
+  .card .icon{font-size:34px;margin-bottom:16px}
+  .card h3{font-size:21px;color:var(--wine);margin-bottom:12px}
+  .card p{font-size:15.5px;color:#574039}
+
+  /* ============ HERITAGE BANNER ============ */
+  .heritage{
+    background:linear-gradient(rgba(40,8,16,.85),rgba(40,8,16,.9)),
+      linear-gradient(135deg,#5b1422,#2a0810);
+    color:var(--cream);text-align:center;
+  }
+  .heritage .big-num{
+    font-size:clamp(56px,12vw,120px);color:var(--gold-soft);
+    line-height:1;font-weight:600;letter-spacing:.02em;
+  }
+  .heritage h2{color:var(--gold-soft)}
+  .heritage p{max-width:760px;margin:24px auto 0;opacity:.92;font-size:17px;font-weight:300;line-height:1.9}
+  .heritage .milestones{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;
+    max-width:880px;margin:46px auto 0;
+  }
+  .milestone{
+    border:1px solid rgba(201,162,75,.4);border-radius:4px;padding:24px 20px;
+    background:rgba(0,0,0,.18);
+  }
+  .milestone .yr{font-size:30px;color:var(--gold-soft);font-weight:600}
+  .milestone p{font-size:14.5px;margin-top:10px;opacity:.85}
+
+  /* ============ VIRTUES ============ */
+  .virtue-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;max-width:920px;margin:0 auto}
+  .virtue{
+    background:#fff;border:1px solid rgba(201,162,75,.35);border-radius:4px;
+    padding:24px 20px;text-align:center;transition:transform .2s,box-shadow .2s;
+  }
+  .virtue:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(58,12,22,.12)}
+  .virtue .sym{font-size:26px;margin-bottom:10px}
+  .virtue .en{font-size:13px;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+  .virtue .cn{font-size:19px;color:var(--wine);font-weight:600;margin-top:4px}
+
+  /* ============ CELEBRATIONS ============ */
+  .celebr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;max-width:880px;margin:0 auto}
+  .celebr{
+    background:#fff;border:1px solid rgba(201,162,75,.35);border-radius:6px;overflow:hidden;
+    box-shadow:0 6px 24px rgba(58,12,22,.08);
+  }
+  .celebr .bar{padding:22px 28px;color:var(--cream);background:linear-gradient(135deg,var(--wine),var(--wine-deep))}
+  .celebr .bar .mon{font-size:13px;letter-spacing:.28em;color:var(--gold-soft)}
+  .celebr .bar h3{font-size:22px;margin-top:6px}
+  .celebr .bar .fr{font-size:13px;opacity:.8;font-style:italic;margin-top:4px}
+  .celebr .desc{padding:26px 28px;font-size:15.5px;color:#574039}
+  .investiture{
+    max-width:760px;margin:42px auto 0;text-align:center;
+    background:rgba(91,20,34,.05);border:1px dashed rgba(201,162,75,.5);
+    border-radius:6px;padding:30px 34px;
+  }
+  .investiture h3{color:var(--wine);font-size:20px;margin-bottom:10px}
+  .investiture p{font-size:15.5px;color:#574039}
+
+  /* ============ RANKS ============ */
+  .ranks{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px;max-width:960px;margin:0 auto}
+  .rank{
+    background:#fff;border:1px solid rgba(201,162,75,.35);border-left:4px solid var(--gold);
+    border-radius:4px;padding:24px 26px;transition:transform .2s,box-shadow .2s;
+  }
+  .rank:hover{transform:translateX(4px);box-shadow:0 10px 28px rgba(58,12,22,.12)}
+  .rank .num{font-size:13px;letter-spacing:.2em;color:var(--gold);font-weight:600}
+  .rank h3{font-size:18px;color:var(--wine);margin:6px 0 8px}
+  .rank .fr{font-size:13px;color:#8a6f64;font-style:italic;margin-bottom:8px}
+  .rank p{font-size:14.5px;color:#574039}
+
+  /* ============ GALLERY ============ */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;max-width:1000px;margin:0 auto}
+  .shot{
+    position:relative;border-radius:6px;overflow:hidden;aspect-ratio:4/3;
+    border:1px solid rgba(201,162,75,.4);box-shadow:0 6px 24px rgba(58,12,22,.12);
+    background:linear-gradient(135deg,#3a0c16,#5b1422);
+  }
+  .shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+  .shot:hover img{transform:scale(1.05)}
+  .shot .ph{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:var(--gold-soft);text-align:center;padding:20px;gap:8px;
+  }
+  .shot .ph .ic{font-size:34px;opacity:.7}
+  .shot .ph .t{font-size:14px;letter-spacing:.06em;opacity:.85}
+  .shot .ph .f{font-size:12px;opacity:.55;font-family:monospace}
+  .shot .cap{
+    position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;
+    background:linear-gradient(transparent,rgba(29,6,12,.85));
+    color:var(--cream);font-size:14px;letter-spacing:.04em;z-index:2;
+  }
+
+  /* ============ ITINERARY ============ */
+  .timeline{max-width:760px;margin:0 auto;position:relative}
+  .timeline::before{
+    content:"";position:absolute;left:26px;top:8px;bottom:8px;width:2px;
+    background:linear-gradient(var(--gold),rgba(201,162,75,.2));
+  }
+  .day{position:relative;padding:0 0 42px 76px}
+  .day:last-child{padding-bottom:0}
+  .day .dot{
+    position:absolute;left:14px;top:2px;width:26px;height:26px;border-radius:50%;
+    background:var(--wine);border:3px solid var(--gold-soft);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold-soft);font-size:13px;font-weight:600;
+  }
+  .day h3{color:var(--wine);font-size:22px;margin-bottom:6px}
+  .day .tag{font-size:12px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+  .day p{font-size:15.5px;color:#574039;margin-top:8px}
+
+  /* ============ MEMBERSHIP ============ */
+  .member-box{
+    max-width:720px;margin:0 auto;background:#fff;border-radius:6px;
+    border:1px solid rgba(201,162,75,.4);overflow:hidden;
+    box-shadow:0 12px 44px rgba(58,12,22,.12);
+  }
+  .member-box .top{
+    background:linear-gradient(135deg,var(--wine),var(--wine-deep));
+    color:var(--cream);padding:40px;text-align:center;
+  }
+  .member-box .top .price{font-size:15px;letter-spacing:.3em;color:var(--gold-soft)}
+  .member-box .top h3{font-size:28px;margin-top:10px}
+  .member-box ul{list-style:none;padding:36px 44px}
+  .member-box li{
+    padding:14px 0;border-bottom:1px dashed rgba(201,162,75,.4);
+    font-size:16px;display:flex;align-items:flex-start;gap:14px;color:#3f2d28;
+  }
+  .member-box li:last-child{border-bottom:none}
+  .member-box li .check{color:var(--gold);font-weight:700;flex-shrink:0}
+
+  /* ============ TIERS ============ */
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;align-items:stretch}
+  .tier{
+    background:#fff;border:1px solid rgba(201,162,75,.35);border-radius:6px;
+    display:flex;flex-direction:column;overflow:hidden;position:relative;
+    box-shadow:0 6px 26px rgba(58,12,22,.08);transition:transform .25s,box-shadow .25s;
+  }
+  .tier:hover{transform:translateY(-8px);box-shadow:0 18px 48px rgba(58,12,22,.18)}
+  .tier.featured{border:2px solid var(--gold);transform:scale(1.03)}
+  .tier.featured:hover{transform:scale(1.03) translateY(-8px)}
+  .tier .ribbon{
+    position:absolute;top:18px;right:-34px;transform:rotate(45deg);
+    background:linear-gradient(135deg,var(--gold),var(--gold-soft));
+    color:var(--wine-deep);font-size:12px;font-weight:700;letter-spacing:.12em;
+    padding:5px 44px;box-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+  .tier .head{
+    padding:34px 28px 28px;text-align:center;color:var(--cream);
+    background:linear-gradient(135deg,var(--wine),var(--wine-deep));
+  }
+  .tier.featured .head{background:linear-gradient(135deg,#7a2233,var(--wine-deep))}
+  .tier .level{font-size:13px;letter-spacing:.28em;color:var(--gold-soft);text-transform:uppercase}
+  .tier .name{font-size:22px;margin-top:10px;font-weight:600}
+  .tier .price{font-size:40px;color:var(--gold-soft);font-weight:600;margin-top:16px;line-height:1}
+  .tier .price small{font-size:16px;color:var(--cream);opacity:.8;font-weight:300}
+  .tier .freq{font-size:13px;opacity:.85;margin-top:8px;letter-spacing:.08em}
+  .tier .body{padding:28px 28px 0;flex:1}
+  .tier .body li{
+    list-style:none;padding:12px 0;border-bottom:1px dashed rgba(201,162,75,.35);
+    font-size:15px;color:#3f2d28;display:flex;gap:11px;align-items:flex-start;
+  }
+  .tier .body li:last-child{border-bottom:none}
+  .tier .body li .ck{color:var(--gold);font-weight:700;flex-shrink:0}
+  .tier .foot{padding:26px 28px 30px;text-align:center}
+  .tier .foot .btn{width:100%}
+
+  /* ============ FORM ============ */
+  .form-wrap{max-width:560px;margin:0 auto;background:#fff;padding:44px 40px;border-radius:6px;
+    border:1px solid rgba(201,162,75,.4);box-shadow:0 10px 36px rgba(58,12,22,.1)}
+  .form-wrap label{display:block;font-size:14px;color:var(--wine);margin:18px 0 6px;letter-spacing:.05em}
+  .form-wrap input,.form-wrap select{
+    width:100%;padding:13px 14px;border:1px solid rgba(91,20,34,.25);border-radius:3px;
+    font-family:inherit;font-size:15px;background:var(--paper);color:var(--ink);transition:border .2s;
+  }
+  .form-wrap input:focus,.form-wrap select:focus{outline:none;border-color:var(--gold)}
+  .form-wrap .btn-gold{width:100%;margin-top:28px;text-align:center}
+  .form-note{text-align:center;font-size:13px;color:#8a6f64;margin-top:16px}
+  .form-success{
+    display:none;text-align:center;padding:30px;color:var(--wine);
+    font-size:18px;background:rgba(201,162,75,.1);border-radius:4px;margin-top:20px;
+  }
+
+  /* ============ FAQ ============ */
+  .faq{max-width:760px;margin:0 auto}
+  .faq details{
+    background:#fff;border:1px solid rgba(201,162,75,.35);border-radius:5px;
+    margin-bottom:14px;padding:0 24px;transition:box-shadow .2s;
+  }
+  .faq details[open]{box-shadow:0 8px 26px rgba(58,12,22,.1)}
+  .faq summary{
+    cursor:pointer;list-style:none;padding:20px 0;font-size:16.5px;color:var(--wine);
+    font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--gold);font-size:24px;transition:transform .2s}
+  .faq details[open] summary::after{content:"–"}
+  .faq .ans{padding:0 0 20px;font-size:15px;color:#574039;line-height:1.85}
+
+  /* ============ SHARE / TRUST ============ */
+  .trust-bar{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-top:40px}
+  .trust-item{
+    display:flex;align-items:center;gap:10px;font-size:14px;color:#574039;
+    background:#fff;border:1px solid rgba(201,162,75,.35);border-radius:40px;padding:10px 20px;
+  }
+  .trust-item .ti{font-size:18px}
+  .share-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+  .share-btn{
+    display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+    border:1px solid var(--gold);color:var(--wine);background:#fff;
+    border-radius:40px;padding:11px 24px;font-size:15px;font-family:inherit;transition:background .2s;
+  }
+  .share-btn:hover{background:rgba(201,162,75,.12)}
+
+  /* sticky bottom CTA (mobile) */
+  .sticky-cta{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
+    background:rgba(58,12,22,.96);backdrop-filter:blur(8px);
+    padding:12px 18px;align-items:center;justify-content:space-between;gap:12px;
+    border-top:1px solid rgba(201,162,75,.4);
+  }
+  .sticky-cta .txt{color:var(--cream);font-size:14px}
+  .sticky-cta .txt b{color:var(--gold-soft)}
+  .sticky-cta .btn{padding:11px 24px;font-size:15px}
+  @media(max-width:760px){.sticky-cta{display:flex}}
+
+  /* ============ FOOTER ============ */
+  footer{
+    background:var(--wine-deep);color:var(--cream);text-align:center;
+    padding:54px 28px 40px;
+  }
+  footer .brand{font-size:22px;color:var(--gold-soft);letter-spacing:.18em}
+  footer p{opacity:.7;font-size:14px;margin-top:14px;font-weight:300}
+  footer .fine{margin-top:24px;font-size:12px;opacity:.5;line-height:1.7;max-width:680px;margin-left:auto;margin-right:auto}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">VIGNES DU SOLEIL</div>
+  <div class="links">
+    <a href="#about">庆典概览</a>
+    <a href="#heritage">骑士团历史</a>
+    <a href="#virtues">骑士八德</a>
+    <a href="#celebrations">两大庆典</a>
+    <a href="#gallery">仪式掠影</a>
+    <a href="#ranks">会员等级</a>
+    <a href="#itinerary">行程安排</a>
+    <a href="#membership">会员方案</a>
+    <a href="#faq">常见问题</a>
+    <a href="#join">立即报名</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="eyebrow">Jurade de Saint-Émilion · Bordeaux · 2026</div>
+  <h1>Vignes du Soleil<br><span class="accent">圣埃美隆骑士盛宴</span></h1>
+  <p class="sub">追随圣埃美隆骑士团（Jurade de Saint-Émilion）八百余年的古法仪典，于金秋九月的法国波尔多，踏入千年古镇与百年庄园，赴一场贵族骑士古法盛宴。</p>
+  <div class="year-badge">始于 1199 年 · 传承八百余年</div>
+  <div class="cta-row">
+    <a href="#join" class="btn btn-gold">成为会员 · 免费参加</a>
+    <a href="#itinerary" class="btn btn-ghost">查看三日行程</a>
+  </div>
+  <div class="scroll-hint">向下滚动 ▾</div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">The Celebration</div>
+      <h2>金秋九月 · 波尔多的盛大开幕</h2>
+      <div class="rule"></div>
+    </div>
+    <p class="lead">
+      每年九月，当波尔多的葡萄园染上金红，便迎来一年中最隆重的时刻——葡萄采收开幕庆典。
+      这不仅是丰收的序章，更是一场延续了近千年的贵族仪典。本年度，我们诚邀尊贵会员亲临现场，
+      入住法国百年庄园，与骑士、酿酒世家与名流共襄盛举。
+    </p>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Exclusive Experiences</div>
+      <h2>四大尊享体验</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">🍇</div>
+        <h3>采收开幕仪式</h3>
+        <p>亲手剪下本季第一串葡萄，参与传统祝酒与祈福仪式，见证波尔多新年份的诞生。</p>
+      </div>
+      <div class="card">
+        <div class="icon">⚔️</div>
+        <h3>贵族骑士盛宴</h3>
+        <p>身着礼服，出席源自十一世纪的骑士晚宴，欣赏中世纪礼仪、长桌烛光与古典乐章。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏰</div>
+        <h3>百年庄园下榻</h3>
+        <p>免费入住法国名庄三天，于葡萄园环抱的城堡客房中，享受庄主级的私人接待。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🍷</div>
+        <h3>名庄品鉴之旅</h3>
+        <p>由首席酿酒师亲自导览酒窖，垂直品鉴跨年份珍藏，深入了解波尔多风土。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HERITAGE -->
+<section id="heritage" class="heritage">
+  <div class="container">
+    <div class="big-num">1199</div>
+    <div class="section-head" style="margin-bottom:0">
+      <div class="kicker" style="color:var(--gold)">Jurade de Saint-Émilion</div>
+      <h2>八百余年的圣埃美隆骑士团</h2>
+      <div class="rule"></div>
+    </div>
+    <p>
+      1152 年，阿基坦公爵领（即今日波尔多所在地区）仍处于英格兰王室统治之下。随着本笃会修士的到来，
+      圣埃美隆（Saint-Émilion）的宗教影响力日渐扩大，成为当地重要的精神圣地。
+      1199 年，英格兰国王「无地王约翰」为制衡教会势力，正式建立圣埃美隆酒会／骑士团（Jurade de Saint-Émilion），
+      授予其最高行政、司法与经济管理权，并赋予监督葡萄种植与酿造的职责，圣埃美隆自此进入自治时期。
+    </p>
+    <p>
+      当时圣埃美隆的美酒常作贡品献予英格兰国王。骑士团亲自监管品质：通过审核的酒桶获颁
+      「Marque à feu du vinetier」酒商火印，不合格者则被销毁。秉持「维护信仰、扶助困厄者」的宗旨，
+      圣埃美隆酒会是法国最古老的行会组织之一，历经数百年兴衰，直至 1948 年重返国际舞台。
+    </p>
+    <p>
+      如今，酒会已完成现代化改革，专注于推广圣埃美隆产区葡萄酒的贸易与文化。据现任酒会主席（Premier Jurat）、
+      Château Angélus 庄主 Hubert de Boüard de Laforest 介绍，酒会现有成员逾 3000 名。
+      凡具备一定葡萄酒知识、获现有成员推荐并缴纳会费者，皆可申请加入。
+    </p>
+    <div class="milestones">
+      <div class="milestone">
+        <div class="yr">1199</div>
+        <p>「无地王约翰」建立圣埃美隆骑士团，开启自治时代。</p>
+      </div>
+      <div class="milestone">
+        <div class="yr">1948</div>
+        <p>历经数百年兴衰后正式重返国际舞台，开启现代复兴。</p>
+      </div>
+      <div class="milestone">
+        <div class="yr">800+</div>
+        <p>历经八百余年传承，骑士团仪典从未中断。</p>
+      </div>
+      <div class="milestone">
+        <div class="yr">3000+</div>
+        <p>现有成员逾三千人，遍布王室、政要、酒庄与各界名流。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIRTUES -->
+<section id="virtues" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">The Eight Virtues</div>
+      <h2>圣埃美隆骑士八德</h2>
+      <div class="rule"></div>
+    </div>
+    <p class="lead" style="margin-bottom:46px">骑士团世代恪守八项骑士美德，它们是受封骑士所承载的精神与荣耀。</p>
+    <div class="virtue-grid">
+      <div class="virtue"><div class="sym">🕊️</div><div class="en">Compassion</div><div class="cn">仁慈</div></div>
+      <div class="virtue"><div class="sym">🎖️</div><div class="en">Honor</div><div class="cn">荣誉</div></div>
+      <div class="virtue"><div class="sym">🦁</div><div class="en">Courage</div><div class="cn">勇气</div></div>
+      <div class="virtue"><div class="sym">✝️</div><div class="en">Faith</div><div class="cn">信仰</div></div>
+      <div class="virtue"><div class="sym">🔥</div><div class="en">Sacrifice</div><div class="cn">牺牲</div></div>
+      <div class="virtue"><div class="sym">🙇</div><div class="en">Humility</div><div class="cn">谦逊</div></div>
+      <div class="virtue"><div class="sym">⚖️</div><div class="en">Justice</div><div class="cn">正义</div></div>
+      <div class="virtue"><div class="sym">🛡️</div><div class="en">Integrity</div><div class="cn">诚信</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CELEBRATIONS -->
+<section id="celebrations">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Two Annual Celebrations</div>
+      <h2>两大年度盛典</h2>
+      <div class="rule"></div>
+    </div>
+    <p class="lead" style="margin-bottom:46px">圣埃美隆骑士团每年举办两次重要庆典，亦是新成员受封授勋的隆重时刻。</p>
+    <div class="celebr-grid">
+      <div class="celebr">
+        <div class="bar">
+          <div class="mon">June · 六月</div>
+          <h3>花期开幕庆典</h3>
+          <div class="fr">Fête de la Fleur</div>
+        </div>
+        <div class="desc">当葡萄花盛放，骑士团在初夏举行庆典，为新一年的收成祈福，预祝风土与气候的眷顾。</div>
+      </div>
+      <div class="celebr">
+        <div class="bar">
+          <div class="mon">September · 九月</div>
+          <h3>葡萄采收开幕庆典</h3>
+          <div class="fr">Ban des Vendanges</div>
+        </div>
+        <div class="desc">金秋时节，骑士团正式宣布采收季开启，举行盛大游行、弥撒与贵族骑士盛宴，共庆丰收。</div>
+      </div>
+    </div>
+    <div class="investiture">
+      <h3>✦ 庄严授勋仪式 · 全球举办</h3>
+      <p>
+        每年 6 月新酒评鉴与 9 月采收开幕庆典期间，均举行隆重授勋仪式——新成员身着传统红袍与披肩，
+        在古老仪轨中正式受封。酒会亦在全球多地举办仪式，足迹遍及 <strong>香港、上海与纽约</strong>。
+        今年 5 月香港 Vinexpo 酒展前，中国演员赵薇，以及阿里巴巴天猫国际总经理刘鹏、副总经理刘一曼，
+        即正式加入圣埃美隆酒会。当您长期支持法国葡萄酒文化与产业，亦有机会获授这一荣耀头衔。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Moments of the Jurade</div>
+      <h2>仪式掠影</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="gallery">
+      <div class="shot">
+        <img src="images/ceremony-1.jpg" alt="身着红袍的骑士团成员"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="ph" style="display:none">
+          <div class="ic">🖼️</div>
+          <div class="t">红袍骑士 · 受封交谈</div>
+          <div class="f">images/ceremony-1.jpg</div>
+        </div>
+        <div class="cap">身着红袍披肩的骑士团成员</div>
+      </div>
+      <div class="shot">
+        <img src="images/ceremony-2.jpg" alt="教堂内的授勋仪式"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="ph" style="display:none">
+          <div class="ic">🖼️</div>
+          <div class="t">古老教堂 · 授勋仪式</div>
+          <div class="f">images/ceremony-2.jpg</div>
+        </div>
+        <div class="cap">圣埃美隆教堂内的庄严授勋</div>
+      </div>
+      <div class="shot">
+        <img src="images/poster.jpg" alt="Vignes du Soleil 会员海报"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="ph" style="display:none">
+          <div class="ic">🖼️</div>
+          <div class="t">Vignes du Soleil · 会员方案</div>
+          <div class="f">images/poster.jpg</div>
+        </div>
+        <div class="cap">Vignes du Soleil 会员甄选</div>
+      </div>
+    </div>
+    <p class="form-note" style="margin-top:24px">
+      （将照片以 <code>ceremony-1.jpg</code>、<code>ceremony-2.jpg</code>、<code>poster.jpg</code> 命名存入 images 文件夹即自动显示）
+    </p>
+  </div>
+</section>
+
+<!-- RANKS -->
+<section id="ranks" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Six Categories of Membership</div>
+      <h2>六大会员等级与类别</h2>
+      <div class="rule"></div>
+    </div>
+    <p class="lead" style="margin-bottom:46px">酒会成员依职业与身份授予六个等级／类别，各司其责，共同守护圣埃美隆的荣耀。</p>
+    <div class="ranks">
+      <div class="rank">
+        <div class="num">01</div>
+        <h3>酒会守护者</h3>
+        <div class="fr">Protectors of the Jurade</div>
+        <p>授予政府领袖及王室成员。</p>
+      </div>
+      <div class="rank">
+        <div class="num">02</div>
+        <h3>酒会同侪</h3>
+        <div class="fr">Peers of the Jurade</div>
+        <p>授予在政治、外交、艺术、文学、农业、军事等领域有卓越贡献人士。</p>
+      </div>
+      <div class="rank">
+        <div class="num">03</div>
+        <h3>神职与宗教界成员</h3>
+        <div class="fr">Grand Aumôniers · Aumôniers · Prieurs</div>
+        <p>授予神职人员及宗教界人士。</p>
+      </div>
+      <div class="rank">
+        <div class="num">04</div>
+        <h3>酒会女爵</h3>
+        <div class="fr">Dames de la Jurade</div>
+        <p>授予酒会的女性成员。</p>
+      </div>
+      <div class="rank">
+        <div class="num">05</div>
+        <h3>荣誉成员</h3>
+        <div class="fr">Prud'Hommes de la Jurade</div>
+        <p>授予酒商、中介、餐厅经营者、侍酒师、采购商等。</p>
+      </div>
+      <div class="rank">
+        <div class="num">06</div>
+        <h3>荣誉酿酒师</h3>
+        <div class="fr">Honorary Winemakers</div>
+        <p>授予葡萄酒酿造行业人士。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section id="itinerary">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Three Days · Bordeaux</div>
+      <h2>三日庄园之旅 · 行程安排</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="timeline">
+      <div class="day">
+        <div class="dot">壹</div>
+        <div class="tag">Day One · 抵达与迎宾</div>
+        <h3>城堡迎宾 · 庄主晚宴</h3>
+        <p>专车接驳入住百年庄园，庄主亲自迎宾。傍晚于葡萄园畔举行欢迎晚宴，开启波尔多之旅。</p>
+      </div>
+      <div class="day">
+        <div class="dot">贰</div>
+        <div class="tag">Day Two · 庆典与盛宴</div>
+        <h3>采收开幕仪式 · 贵族骑士盛宴</h3>
+        <p>上午参与葡萄采收开幕仪式与祝酒祈福；夜晚换上礼服，出席十一世纪传承的贵族骑士盛宴。</p>
+      </div>
+      <div class="day">
+        <div class="dot">叁</div>
+        <div class="tag">Day Three · 品鉴与告别</div>
+        <h3>名庄酒窖品鉴 · 惜别茶会</h3>
+        <p>由首席酿酒师导览酒窖，垂直品鉴珍藏年份。午后举行惜别茶会，为旅程画上圆满句点。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section id="membership" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Membership · 法国骑士会员</div>
+      <h2>三档会员等级</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="tiers">
+
+      <!-- TIER 1 -->
+      <div class="tier">
+        <div class="head">
+          <div class="level">会员方案 1 · 银爵</div>
+          <div class="name">本地骑士会员</div>
+          <div class="price">$5,000<small> / 人</small></div>
+          <div class="freq">洛杉矶本地活动 · 每年 2 次</div>
+        </div>
+        <ul class="body">
+          <li><span class="ck">✦</span><span>每年 2 次洛杉矶本地骑士主题活动</span></li>
+          <li><span class="ck">✦</span><span>会员专属社交晚宴与葡萄酒品鉴沙龙</span></li>
+          <li><span class="ck">✦</span><span>骑士会员身份认证与社群礼遇</span></li>
+          <li><span class="ck">✦</span><span>升级更高方案享专属折抵</span></li>
+        </ul>
+        <div class="foot">
+          <a href="#join" class="btn btn-ghost" style="border-color:var(--wine);color:var(--wine)">选择方案 1</a>
+        </div>
+      </div>
+
+      <!-- TIER 2 (FEATURED) -->
+      <div class="tier featured">
+        <div class="ribbon">最受欢迎</div>
+        <div class="head">
+          <div class="level">会员方案 2 · 金爵</div>
+          <div class="name">波尔多庄园骑士会员</div>
+          <div class="price">$20,000<small> / 一对夫妻</small></div>
+          <div class="freq">法国庄园贵族骑士活动 · 每年 1 次</div>
+        </div>
+        <ul class="body">
+          <li><span class="ck">✦</span><span>法国 3 日深度漫游 + 漫步 11 世纪千年古镇</span></li>
+          <li><span class="ck">✦</span><span>赴一场贵族骑士古法盛宴</span></li>
+          <li><span class="ck">✦</span><span>百年庄园免费接待 3 天，吃喝玩乐全包</span></li>
+          <li><span class="ck">✦</span><span>葡萄采收开幕庆典 + 名庄酒窖品鉴</span></li>
+          <li><span class="ck">✦</span><span>含方案 1 全部本地活动权益</span></li>
+        </ul>
+        <div class="foot">
+          <a href="#join" class="btn btn-gold">选择方案 2</a>
+        </div>
+      </div>
+
+      <!-- TIER 3 -->
+      <div class="tier">
+        <div class="head">
+          <div class="level">会员方案 3 · 御爵</div>
+          <div class="name">至尊私定礼遇会员</div>
+          <div class="price">$50,000<small> / 人</small></div>
+          <div class="freq">专属顶级私定礼遇 · 每年 1 次</div>
+        </div>
+        <ul class="body">
+          <li><span class="ck">✦</span><span>专属顶级私人定制行程</span></li>
+          <li><span class="ck">✦</span><span>私人管家与礼宾全程随行</span></li>
+          <li><span class="ck">✦</span><span>庄主级私宴与名流社交圈层礼遇</span></li>
+          <li><span class="ck">✦</span><span>稀有年份珍藏品鉴与私人收藏机会</span></li>
+          <li><span class="ck">✦</span><span>含方案 2 全部庄园与本地活动权益</span></li>
+        </ul>
+        <div class="foot">
+          <a href="#join" class="btn btn-ghost" style="border-color:var(--wine);color:var(--wine)">选择方案 3</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Frequently Asked</div>
+      <h2>常见问题</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>圣埃美隆骑士团是什么？</summary>
+        <div class="ans">圣埃美隆酒会（Jurade de Saint-Émilion）创立于 1199 年，是法国最古老的行会组织之一，1948 年重返国际舞台。如今专注于推广圣埃美隆产区葡萄酒的贸易与文化，现有成员逾 3000 名，遍布王室、政要、酒庄庄主与各界名流。</div>
+      </details>
+      <details>
+        <summary>成为会员可以参加哪些活动？</summary>
+        <div class="ans">每年 6 月花期开幕庆典（Fête de la Fleur）与 9 月葡萄采收开幕庆典（Ban des Vendanges）期间，均举行隆重的授勋仪式与贵族骑士盛宴。不同会员方案对应不同权益，详见上方「会员方案」。</div>
+      </details>
+      <details>
+        <summary>三档会员方案有何区别？</summary>
+        <div class="ans">方案 1（$5,000/人）含每年 2 次洛杉矶本地活动；方案 2（$20,000/一对夫妻）含法国 3 日深度漫游、千年古镇与贵族骑士古法盛宴；方案 3（$50,000/人）为专属顶级私人定制礼遇。高阶方案含低阶全部权益。</div>
+      </details>
+      <details>
+        <summary>报名后多久会有人联系我？</summary>
+        <div class="ans">提交报名表后，我们的礼宾顾问通常会在 1–2 个工作日内与您联系，确认会员资格、行程细节与费用条款。</div>
+      </details>
+      <details>
+        <summary>名额与费用如何安排？</summary>
+        <div class="ans">每年活动名额有限，按报名先后与会员等级安排。具体费用、付款方式、退改与合同条款，将由礼宾顾问在确认阶段以正式文件形式向您完整说明。</div>
+      </details>
+    </div>
+
+    <div class="trust-bar">
+      <div class="trust-item"><span class="ti">🏛️</span>1199 年创立 · 800+ 年传承</div>
+      <div class="trust-item"><span class="ti">👥</span>全球 3000+ 名会员</div>
+      <div class="trust-item"><span class="ti">🌍</span>香港 · 上海 · 纽约举办仪式</div>
+      <div class="trust-item"><span class="ti">🎫</span>限量名额 · 礼宾全程服务</div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN / FORM -->
+<section id="join" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Reserve Your Place</div>
+      <h2>立即登记 · 预留席位</h2>
+      <div class="rule"></div>
+    </div>
+    <p class="lead" style="margin-bottom:40px">名额有限，敬请尽早登记。我们的礼宾顾问将在收到信息后与您联系，确认会员资格与行程细节。</p>
+    <div class="form-wrap">
+      <form id="joinForm">
+        <label for="name">姓名</label>
+        <input type="text" id="name" placeholder="请输入您的姓名" required>
+
+        <label for="phone">联系电话</label>
+        <input type="tel" id="phone" placeholder="请输入手机号码" required>
+
+        <label for="email">电子邮箱</label>
+        <input type="email" id="email" placeholder="your@email.com" required>
+
+        <label for="tier">意向会员方案</label>
+        <select id="tier">
+          <option>方案 1 · $5,000/人（洛杉矶本地活动 2 次/年）</option>
+          <option selected>方案 2 · $20,000/一对夫妻（法国庄园贵族骑士 3 天接待）</option>
+          <option>方案 3 · $50,000/人（专属顶级私定礼遇）</option>
+          <option>尚未决定，希望顾问推荐</option>
+        </select>
+
+        <label for="guests">出行人数</label>
+        <select id="guests">
+          <option>1 位</option>
+          <option>2 位</option>
+          <option>3 位</option>
+          <option>4 位及以上</option>
+        </select>
+
+        <button type="submit" class="btn btn-gold">提交报名 · 成为会员</button>
+        <p class="form-note">提交即表示您希望了解会员资格详情，我们将尽快与您联系。</p>
+      </form>
+      <div class="form-success" id="formSuccess">
+        ✦ 感谢您的登记！我们的礼宾顾问将尽快与您联系，确认 2026 波尔多庆典的专属席位。
+      </div>
+    </div>
+
+    <div class="share-row">
+      <button class="share-btn" onclick="copyLink()">🔗 复制链接</button>
+      <button class="share-btn" onclick="nativeShare()">📤 分享给好友</button>
+    </div>
+    <p class="form-note" id="shareTip">把本页分享给同样热爱法国葡萄酒文化的朋友，邀其一同成为骑士会员。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">VIGNES DU SOLEIL</div>
+  <p>圣埃美隆骑士盛宴 · 2026 波尔多葡萄采收开幕庆典 · 三日庄园之旅</p>
+  <p>会员与合作咨询 · Sophia Li　|
+     <a href="tel:+19493107358" style="color:var(--gold-soft)">+1 (949) 310-7358</a>　|
+     <a href="mailto:sophia081927@gmail.com" style="color:var(--gold-soft)">sophia081927@gmail.com</a></p>
+  <p class="fine">
+    本页面为活动宣传示意页面。所有行程、权益及会员资格以官方正式条款为准。
+    请在加入任何会员计划或支付费用前，核实主办方资质与活动真实性，谨防诈骗。
+  </p>
+</footer>
+
+<!-- 手机端常驻报名条 -->
+<div class="sticky-cta">
+  <div class="txt"><b>成为会员</b> · 即可参加 2026 波尔多盛典</div>
+  <a href="#join" class="btn btn-gold">立即报名</a>
+</div>
+
+<script>
+  document.getElementById('joinForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+    document.getElementById('formSuccess').scrollIntoView({behavior:'smooth',block:'center'});
+  });
+
+  function copyLink(){
+    var url = window.location.href;
+    var tip = document.getElementById('shareTip');
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){
+        tip.textContent = '✦ 链接已复制，快粘贴分享给好友吧！';
+      }, function(){ tip.textContent = '请手动复制浏览器地址栏链接分享。'; });
+    } else {
+      tip.textContent = '请手动复制浏览器地址栏链接分享。';
+    }
+  }
+
+  function nativeShare(){
+    var data = {
+      title: 'Vignes du Soleil · 圣埃美隆骑士盛宴',
+      text: '2026 波尔多葡萄采收开幕庆典 · 贵族骑士盛宴 · 三日庄园之旅。成为会员即可参加。',
+      url: window.location.href
+    };
+    if(navigator.share){
+      navigator.share(data).catch(function(){});
+    } else {
+      copyLink();
+    }
+  }
+</script>
+
+</body>
+</html>
