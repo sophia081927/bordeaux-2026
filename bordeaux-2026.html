@@ -158,6 +158,7 @@
   }
   .heritage h2{color:var(--gold-soft)}
   .heritage p{max-width:760px;margin:24px auto 0;opacity:.92;font-size:17px;font-weight:300;line-height:1.9}
+  .heritage .src-note{max-width:760px;margin:18px auto 0;font-size:13px;opacity:.6;font-style:italic;line-height:1.7}
   .heritage .milestones{
     display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;
     max-width:880px;margin:46px auto 0;
@@ -390,6 +391,13 @@
   .wine .region{font-size:12px;letter-spacing:.16em;color:#a07b1f;text-transform:uppercase}
   .wine .wname{font-size:18px;color:var(--wine);font-weight:600;margin-top:7px;line-height:1.45}
   .wine .fr{font-size:12.5px;color:#8a6f64;font-style:italic;margin-top:5px}
+  .wine .suit{
+    display:inline-block;margin-top:12px;font-size:13px;font-weight:600;
+    color:var(--wine-deep);letter-spacing:.03em;
+    background:linear-gradient(135deg,var(--gold-soft),#efd9a6);
+    border-radius:30px;padding:5px 14px;box-shadow:0 2px 8px rgba(201,162,75,.3);
+  }
+  .wine .suit .lbl{font-weight:400;opacity:.75;margin-right:5px}
   .wine .wbody{padding:18px 24px 4px;flex:1}
   .wine .row{font-size:14px;color:#574039;margin-bottom:11px;display:flex;gap:9px;line-height:1.6}
   .wine .row b{color:var(--wine);font-weight:600;flex-shrink:0}
@@ -444,7 +452,7 @@
   <p class="sub">追随圣埃美隆骑士团（Jurade de Saint-Émilion）八百余年的古法仪典，于金秋九月的法国波尔多，踏入千年古镇与百年庄园，赴一场贵族骑士古法盛宴。</p>
   <div class="year-badge">始于 1199 年 · 传承八百余年</div>
   <div class="cta-row">
-    <a href="#join" class="btn btn-gold">成为会员 · 免费参加</a>
+    <a href="#join" class="btn btn-gold">成为会员 · 出席盛典</a>
     <a href="#itinerary" class="btn btn-ghost">查看三日行程</a>
   </div>
   <div class="scroll-hint">向下滚动 ▾</div>
@@ -488,7 +496,7 @@
       <div class="card">
         <div class="icon">🏰</div>
         <h3>百年庄园下榻</h3>
-        <p>免费入住法国名庄三天，于葡萄园环抱的城堡客房中，享受庄主级的私人接待。</p>
+        <p>会员权益包含法国庄园三日接待，于葡萄园环抱的城堡客房中，享受庄主级的私人礼遇。</p>
       </div>
       <div class="card">
         <div class="icon">🍷</div>
@@ -509,10 +517,10 @@
       <div class="rule"></div>
     </div>
     <p>
-      1152 年，阿基坦公爵领（即今日波尔多所在地区）仍处于英格兰王室统治之下。随着本笃会修士的到来，
-      圣埃美隆（Saint-Émilion）的宗教影响力日渐扩大，成为当地重要的精神圣地。
-      1199 年，英格兰国王「无地王约翰」为制衡教会势力，正式建立圣埃美隆酒会／骑士团（Jurade de Saint-Émilion），
-      授予其最高行政、司法与经济管理权，并赋予监督葡萄种植与酿造的职责，圣埃美隆自此进入自治时期。
+      据圣埃美隆酒会公开史料记载：1152 年，阿基坦公爵领（即今日波尔多所在地区）仍处于英格兰王室统治之下，
+      随着本笃会修士的到来，圣埃美隆（Saint-Émilion）的宗教影响力日渐扩大，成为当地重要的精神圣地。
+      相传 1199 年，英格兰国王「无地王约翰」为制衡教会势力，授权设立圣埃美隆酒会／骑士团（Jurade de Saint-Émilion），
+      赋予其管理与监督葡萄种植、酿造的职责，圣埃美隆自此进入自治时期。
     </p>
     <p>
       当时圣埃美隆的美酒常作贡品献予英格兰国王。骑士团亲自监管品质：通过审核的酒桶获颁
@@ -520,10 +528,10 @@
       圣埃美隆酒会是法国最古老的行会组织之一，历经数百年兴衰，直至 1948 年重返国际舞台。
     </p>
     <p>
-      如今，酒会已完成现代化改革，专注于推广圣埃美隆产区葡萄酒的贸易与文化。据现任酒会主席（Premier Jurat）、
-      Château Angélus 庄主 Hubert de Boüard de Laforest 介绍，酒会现有成员逾 3000 名。
-      凡具备一定葡萄酒知识、获现有成员推荐并缴纳会费者，皆可申请加入。
+      如今，酒会已完成现代化改革，专注于推广圣埃美隆产区葡萄酒的贸易与文化。据酒会公开介绍，
+      其成员遍布葡萄酒业界与社会各界；凡具备一定葡萄酒知识、获现有成员推荐并缴纳会费者，皆可申请加入。
     </p>
+    <p class="src-note">注：以上历史与会员信息据圣埃美隆酒会（Jurade de Saint-Émilion）公开资料整理，具体以酒会官方说明为准。</p>
     <div class="milestones">
       <div class="milestone">
         <div class="yr">1199</div>
@@ -538,8 +546,8 @@
         <p>历经八百余年传承，骑士团仪典从未中断。</p>
       </div>
       <div class="milestone">
-        <div class="yr">3000+</div>
-        <p>现有成员逾三千人，遍布王室、政要、酒庄与各界名流。</p>
+        <div class="yr">数千</div>
+        <p>据酒会公开介绍，成员遍布葡萄酒业界、商界与社会各界。</p>
       </div>
     </div>
   </div>
@@ -598,9 +606,8 @@
       <h3>✦ 庄严授勋仪式 · 全球举办</h3>
       <p>
         每年 6 月新酒评鉴与 9 月采收开幕庆典期间，均举行隆重授勋仪式——新成员身着传统红袍与披肩，
-        在古老仪轨中正式受封。酒会亦在全球多地举办仪式，足迹遍及 <strong>香港、上海与纽约</strong>。
-        今年 5 月香港 Vinexpo 酒展前，中国演员赵薇，以及阿里巴巴天猫国际总经理刘鹏、副总经理刘一曼，
-        即正式加入圣埃美隆酒会。当您长期支持法国葡萄酒文化与产业，亦有机会获授这一荣耀头衔。
+        在古老仪轨中正式受封。据酒会公开介绍，其授勋仪式亦在全球多地举办，足迹遍及 <strong>香港、上海与纽约</strong>，
+        吸引葡萄酒业界与社会各界人士加入。当您长期支持法国葡萄酒文化与产业，亦有机会获邀了解这一荣誉传统。
       </p>
     </div>
   </div>
@@ -756,6 +763,7 @@
           <div class="region">Castillon · 波尔多</div>
           <div class="wname">瑰宝酒庄 · 卡斯蒂永干红</div>
           <div class="fr">Château Guibeau · Castillon Côtes de Bordeaux</div>
+          <div class="suit"><span class="lbl">适合</span>入门日常款</div>
         </div>
         <div class="wbody">
           <div class="row"><b>风味</b><span>果香明快、平易近人，日常佐餐的入门之选。</span></div>
@@ -773,6 +781,7 @@
           <div class="region">Puisseguin Saint-Émilion</div>
           <div class="wname">瑰宝酒庄 · 普涩港圣埃美隆</div>
           <div class="fr">Château Guibeau · Puisseguin Saint-Émilion</div>
+          <div class="suit"><span class="lbl">适合</span>入门日常款</div>
         </div>
         <div class="wbody">
           <div class="row"><b>风味</b><span>圣埃美隆卫星产区，结构温润，性价比之选。</span></div>
@@ -790,6 +799,7 @@
           <div class="region">Puisseguin Saint-Émilion</div>
           <div class="wname">瑰宝酒庄 · 佳酿「枫之语」2020</div>
           <div class="fr">Château Guibeau la Fourvieille · Cerro Gordo</div>
+          <div class="suit"><span class="lbl">适合</span>晚宴送礼款</div>
         </div>
         <div class="wbody">
           <div class="row"><b>品种</b><span>80% 梅洛 · 20% 品丽珠</span></div>
@@ -810,6 +820,7 @@
           <div class="region">Puisseguin Saint-Émilion · 桃红</div>
           <div class="wname">瑰宝酒庄 · 桃红 2021</div>
           <div class="fr">Château Guibeau la Fourvieille · Rosé</div>
+          <div class="suit"><span class="lbl">适合</span>女士喜爱的柔顺款</div>
         </div>
         <div class="wbody">
           <div class="row"><b>品种</b><span>100% 梅洛 · 老藤均龄 55 年</span></div>
@@ -829,6 +840,7 @@
           <div class="region">车库酒 · Garage Wine</div>
           <div class="wname">贵宝酒庄 · EPHATA 2017</div>
           <div class="fr">Château Guibot La Fourvieille · EPHATA</div>
+          <div class="suit"><span class="lbl">适合</span>收藏限量款</div>
         </div>
         <div class="wbody">
           <div class="row"><b>品种</b><span>100% 品丽珠 · 百年老藤（树龄 100 年+）</span></div>
@@ -848,6 +860,7 @@
           <div class="region">Médoc · Montravel</div>
           <div class="wname">拉雷庄园 · 永恒 2021</div>
           <div class="fr">Château La Raye · In Aeternum</div>
+          <div class="suit"><span class="lbl">适合</span>晚宴送礼款</div>
         </div>
         <div class="wbody">
           <div class="row"><b>品种</b><span>50% 梅洛 · 40% 品丽珠 · 10% 赤霞珠</span></div>
@@ -867,6 +880,7 @@
           <div class="region">Médoc · 中级庄 Cru Bourgeois</div>
           <div class="wname">红磨坊庄园 2016</div>
           <div class="fr">Château Moulin de Bel Air</div>
+          <div class="suit"><span class="lbl">适合</span>入门日常款</div>
         </div>
         <div class="wbody">
           <div class="row"><b>品种</b><span>80% 梅洛 · 20% 赤霞珠 · 树龄 35 年</span></div>
@@ -886,6 +900,7 @@
           <div class="region">Médoc · 中级庄 Cru Bourgeois</div>
           <div class="wname">壮志凌云 · 干红 2017</div>
           <div class="fr">Château Les Tuileries · Médoc</div>
+          <div class="suit"><span class="lbl">适合</span>高端宴请款</div>
         </div>
         <div class="wbody">
           <div class="row"><b>品种</b><span>50% 赤霞珠 · 50% 梅洛 · 树龄 60 年</span></div>
@@ -906,6 +921,7 @@
           <div class="region">Médoc · 车库酒 Garage Wine</div>
           <div class="wname">壮志凌云 · 至尊干红 2017</div>
           <div class="fr">Révélation Château du Les Tuileries</div>
+          <div class="suit"><span class="lbl">适合</span>高端宴请款</div>
         </div>
         <div class="wbody">
           <div class="row"><b>品种</b><span>50% 赤霞珠 · 50% 梅洛 · 树龄 65 年</span></div>
@@ -925,6 +941,7 @@
           <div class="region">Médoc · 车库酒 Garage Wine</div>
           <div class="wname">壮志凌云 ·「一切皆有可能」</div>
           <div class="fr">L'Intégrale des Tuileries · 2018–2019</div>
+          <div class="suit"><span class="lbl">适合</span>收藏限量款</div>
         </div>
         <div class="wbody">
           <div class="row"><b>品种</b><span>⅓ 赤霞珠 · ⅓ 梅洛 · ⅓ 小维多</span></div>
@@ -945,6 +962,7 @@
           <div class="region">Médoc · 限量珍藏</div>
           <div class="wname">小维多 ·「Princesse Lola」特酿</div>
           <div class="fr">Petit Verdot des Tuileries · Cuvée Princesse Lola</div>
+          <div class="suit"><span class="lbl">适合</span>收藏限量款</div>
         </div>
         <div class="wbody">
           <div class="row"><b>品种</b><span>小维多单一品种特酿</span></div>
@@ -963,6 +981,7 @@
           <div class="region">Saint-Émilion · 列级庄 Grand Cru Classé</div>
           <div class="wname">达索酒庄 2019</div>
           <div class="fr">Château Dassault · Grand Cru Classé</div>
+          <div class="suit"><span class="lbl">适合</span>高端宴请款</div>
         </div>
         <div class="wbody">
           <div class="row"><b>品种</b><span>75% 梅洛 · 22% 品丽珠 · 3% 赤霞珠</span></div>
@@ -1027,7 +1046,7 @@
         <ul class="body">
           <li><span class="ck">✦</span><span>法国 3 日深度漫游 + 漫步 11 世纪千年古镇</span></li>
           <li><span class="ck">✦</span><span>赴一场贵族骑士古法盛宴</span></li>
-          <li><span class="ck">✦</span><span>百年庄园免费接待 3 天，吃喝玩乐全包</span></li>
+          <li><span class="ck">✦</span><span>会员权益含法国百年庄园三日接待（含食宿与活动安排）</span></li>
           <li><span class="ck">✦</span><span>葡萄采收开幕庆典 + 名庄酒窖品鉴</span></li>
           <li><span class="ck">✦</span><span>含方案 1 全部本地活动权益</span></li>
         </ul>
@@ -1071,7 +1090,7 @@
     <div class="faq">
       <details open>
         <summary>圣埃美隆骑士团是什么？</summary>
-        <div class="ans">圣埃美隆酒会（Jurade de Saint-Émilion）创立于 1199 年，是法国最古老的行会组织之一，1948 年重返国际舞台。如今专注于推广圣埃美隆产区葡萄酒的贸易与文化，现有成员逾 3000 名，遍布王室、政要、酒庄庄主与各界名流。</div>
+        <div class="ans">圣埃美隆酒会（Jurade de Saint-Émilion）创立于 1199 年，是法国最古老的行会组织之一，1948 年重返国际舞台。如今专注于推广圣埃美隆产区葡萄酒的贸易与文化。据酒会公开介绍，其成员遍布葡萄酒业界与社会各界（相关历史与数据以酒会官方说明为准）。</div>
       </details>
       <details>
         <summary>成为会员可以参加哪些活动？</summary>
@@ -1093,7 +1112,7 @@
 
     <div class="trust-bar">
       <div class="trust-item"><span class="ti">🏛️</span>1199 年创立 · 800+ 年传承</div>
-      <div class="trust-item"><span class="ti">👥</span>全球 3000+ 名会员</div>
+      <div class="trust-item"><span class="ti">👥</span>遍及全球的会员网络</div>
       <div class="trust-item"><span class="ti">🌍</span>香港 · 上海 · 纽约举办仪式</div>
       <div class="trust-item"><span class="ti">🎫</span>限量名额 · 礼宾全程服务</div>
     </div>
