@@ -100,7 +100,7 @@
   .hero .year-badge{
     margin-top:18px;font-size:15px;letter-spacing:.3em;color:var(--gold);
   }
-  .cta-row{margin-top:44px;display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+  .cta-row{margin-top:44px;display:flex;gap:18px;flex-wrap:wrap;justify-content:center;align-items:center}
   .btn{
     display:inline-block;padding:15px 38px;font-size:16px;letter-spacing:.1em;
     border-radius:2px;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;
@@ -421,6 +421,61 @@
   .wine .case{font-size:12.5px;color:#8a6f64;text-align:right;line-height:1.55}
   .wine-note{text-align:center;font-size:13px;color:#8a6f64;margin-top:34px;line-height:1.8}
 
+  /* ============ APPLY BTN SUBLABEL ============ */
+  .btn .btn-en{display:block;font-size:11px;letter-spacing:.14em;font-weight:400;opacity:.82;margin-top:3px;text-transform:uppercase}
+
+  /* ============ TIER "适合谁" ============ */
+  .tier .fit{
+    margin:0 28px;padding:16px 0 4px;border-top:1px dashed rgba(201,162,75,.45);
+    font-size:13.5px;color:#5a4038;line-height:1.7;
+  }
+  .tier .fit b{display:block;color:var(--gold);font-size:12px;letter-spacing:.18em;margin-bottom:6px;text-transform:uppercase}
+
+  /* ============ WINE CARD ACTIONS ============ */
+  .wine .wactions{display:flex;flex-wrap:wrap;gap:8px;padding:0 22px 22px;margin-top:auto}
+  .wine .wbtn{
+    flex:1 1 auto;min-width:88px;text-align:center;cursor:pointer;font-family:inherit;
+    font-size:12.5px;letter-spacing:.02em;padding:9px 8px;border-radius:4px;
+    border:1px solid rgba(91,20,34,.3);background:#fff;color:var(--wine);
+    transition:background .2s,color .2s,transform .15s;
+  }
+  .wine .wbtn:hover{background:var(--wine);color:var(--cream);transform:translateY(-1px)}
+  .wine .wbtn.primary{background:linear-gradient(135deg,var(--gold),var(--gold-soft));border:none;color:var(--wine-deep);font-weight:600}
+  .wine .wbtn.primary:hover{background:linear-gradient(135deg,var(--wine),var(--wine-deep));color:var(--cream)}
+
+  /* ============ SCENE SELECTOR ============ */
+  .scene-pick{max-width:1010px;margin:0 auto 54px;background:#fff;border:1px solid rgba(201,162,75,.35);border-radius:8px;padding:30px 30px 26px;box-shadow:0 6px 26px rgba(58,12,22,.07)}
+  .scene-pick .sp-head{text-align:center;margin-bottom:24px}
+  .scene-pick .sp-head h3{color:var(--wine);font-size:clamp(20px,3vw,25px)}
+  .scene-pick .sp-head p{color:#8a6f64;font-size:14px;margin-top:7px}
+  .scene-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+  .scene{display:flex;gap:14px;align-items:flex-start;padding:15px 17px;border:1px solid rgba(201,162,75,.3);border-radius:6px;background:linear-gradient(135deg,#fff,#fbf7f0);transition:transform .2s,box-shadow .2s}
+  .scene:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(58,12,22,.1)}
+  .scene .ico{font-size:24px;flex-shrink:0;line-height:1.3}
+  .scene .sc-name{font-size:15.5px;color:var(--wine);font-weight:600;margin-bottom:5px}
+  .scene .sc-wines{font-size:13.5px;color:#574039;line-height:1.7}
+
+  /* ============ WHY TRUST ============ */
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;max-width:1010px;margin:0 auto}
+  .why-item{display:flex;gap:15px;align-items:flex-start;background:#fff;border:1px solid rgba(201,162,75,.3);border-left:3px solid var(--gold);border-radius:6px;padding:22px 24px;box-shadow:0 4px 18px rgba(58,12,22,.05);transition:transform .2s,box-shadow .2s}
+  .why-item:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(58,12,22,.12)}
+  .why-item .wi-ic{font-size:26px;flex-shrink:0;line-height:1.2}
+  .why-item .wi-t{font-size:16.5px;color:var(--wine);font-weight:600;margin-bottom:5px}
+  .why-item .wi-d{font-size:13.5px;color:#574039;line-height:1.65}
+  .why-note{max-width:880px;margin:30px auto 0;text-align:center;font-size:13px;color:#8a6f64;font-style:italic;line-height:1.8}
+
+  /* ============ FORM ADDITIONS ============ */
+  .form-wrap textarea{
+    width:100%;padding:13px 14px;border:1px solid rgba(91,20,34,.25);border-radius:3px;
+    font-family:inherit;font-size:15px;background:var(--paper);color:var(--ink);resize:vertical;min-height:88px;transition:border .2s;
+  }
+  .form-wrap textarea:focus{outline:none;border-color:var(--gold)}
+  .chip-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:7px}
+  .chip{display:inline-flex;align-items:center;gap:7px;font-size:14px;color:#3f2d28;cursor:pointer;border:1px solid rgba(91,20,34,.25);border-radius:30px;padding:8px 15px;background:var(--paper);transition:background .15s,border-color .15s,color .15s}
+  .chip input{accent-color:var(--wine);margin:0}
+  .chip:has(input:checked){background:rgba(201,162,75,.2);border-color:var(--gold);color:var(--wine);font-weight:600}
+  #selectedWine.glow{border-color:var(--gold);background:rgba(201,162,75,.16);box-shadow:0 0 0 3px rgba(201,162,75,.25)}
+
   /* ============ FOOTER ============ */
   footer{
     background:var(--wine-deep);color:var(--cream);text-align:center;
@@ -459,7 +514,7 @@
   <p class="sub">追随圣埃美隆骑士团（Jurade de Saint-Émilion）八百余年的古法仪典，于金秋九月的法国波尔多，踏入千年古镇与百年庄园，赴一场贵族骑士古法盛宴。</p>
   <div class="year-badge">始于 1199 年 · 传承八百余年</div>
   <div class="cta-row">
-    <a href="#join" class="btn btn-gold">成为会员 · 出席盛典</a>
+    <a href="#join" class="btn btn-gold">申请会员 · 预留席位<span class="btn-en">Apply for Membership</span></a>
     <a href="#itinerary" class="btn btn-ghost">查看三日行程</a>
   </div>
   <div class="scroll-hint">向下滚动 ▾</div>
@@ -635,7 +690,6 @@
         <div class="ph" style="display:none">
           <div class="ic">🖼️</div>
           <div class="t">红袍骑士 · 受封交谈</div>
-          <div class="f">images/ceremony-1.jpg</div>
         </div>
         <div class="cap">身着红袍披肩的骑士团成员</div>
       </div>
@@ -645,7 +699,6 @@
         <div class="ph" style="display:none">
           <div class="ic">🖼️</div>
           <div class="t">古老教堂 · 授勋仪式</div>
-          <div class="f">images/ceremony-2.jpg</div>
         </div>
         <div class="cap">圣埃美隆教堂内的庄严授勋</div>
       </div>
@@ -653,16 +706,12 @@
         <img src="images/poster.jpg" alt="Vignes du Soleil 会员海报"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="ph" style="display:none">
-          <div class="ic">🖼️</div>
-          <div class="t">Vignes du Soleil · 会员方案</div>
-          <div class="f">images/poster.jpg</div>
+          <div class="ic">⚜️</div>
+          <div class="t">Vignes du Soleil · 会员甄选</div>
         </div>
         <div class="cap">Vignes du Soleil 会员甄选</div>
       </div>
     </div>
-    <p class="form-note" style="margin-top:24px">
-      （将照片以 <code>ceremony-1.jpg</code>、<code>ceremony-2.jpg</code>、<code>poster.jpg</code> 命名存入 images 文件夹即自动显示）
-    </p>
   </div>
 </section>
 
@@ -760,6 +809,58 @@
       （Fédération des Vignerons Français）及上百家名庄保持稳定合作，亦为瑰宝酒庄最大股东。
       董事长 Aurore JI 荣获法国波尔多骑士勋章。以下为本年度会员甄选酒款，自庄园直采、限量供应。
     </p>
+
+    <!-- 按场景选酒 -->
+    <div class="scene-pick">
+      <div class="sp-head">
+        <h3>不知道选哪款？按场景选择</h3>
+        <p>Not sure which to choose? Pick by occasion</p>
+      </div>
+      <div class="scene-grid">
+        <div class="scene">
+          <div class="ico">🍽️</div>
+          <div>
+            <div class="sc-name">日常晚餐</div>
+            <div class="sc-wines">Castillon · Puisseguin Saint-Émilion · Moulin de Bel Air</div>
+          </div>
+        </div>
+        <div class="scene">
+          <div class="ico">🥂</div>
+          <div>
+            <div class="sc-name">朋友聚会</div>
+            <div class="sc-wines">桃红 Rosé · Castillon · Médoc 中级庄</div>
+          </div>
+        </div>
+        <div class="scene">
+          <div class="ico">🎁</div>
+          <div>
+            <div class="sc-name">商务送礼</div>
+            <div class="sc-wines">Cerro Gordo · In Aeternum · Révélation</div>
+          </div>
+        </div>
+        <div class="scene">
+          <div class="ico">🍷</div>
+          <div>
+            <div class="sc-name">高端宴请</div>
+            <div class="sc-wines">Château Dassault 2019 · Les Tuileries · Révélation</div>
+          </div>
+        </div>
+        <div class="scene">
+          <div class="ico">💎</div>
+          <div>
+            <div class="sc-name">收藏限量</div>
+            <div class="sc-wines">EPHATA · L'Intégrale · 小维多 Princesse Lola</div>
+          </div>
+        </div>
+        <div class="scene">
+          <div class="ico">🌸</div>
+          <div>
+            <div class="sc-name">女性朋友喜欢</div>
+            <div class="sc-wines">桃红 Rosé · 柔顺梅洛 · 圣埃美隆卫星产区</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="wine-grid">
 
@@ -1011,8 +1112,46 @@
   </div>
 </section>
 
+<!-- WHY TRUST -->
+<section id="why">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Why Vignes du Soleil</div>
+      <h2>为什么选择 Vignes du Soleil</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="wi-ic">🏰</div>
+        <div><div class="wi-t">波尔多庄园资源</div><div class="wi-d">深耕波尔多多年，与上百家名庄及法国葡萄酒酿造商联合会建立稳定合作。</div></div>
+      </div>
+      <div class="why-item">
+        <div class="wi-ic">🍷</div>
+        <div><div class="wi-t">名庄直采 · 会员优先配额</div><div class="wi-d">自庄园一站式直采，会员享庄园直采价与稀缺年份的优先配额。</div></div>
+      </div>
+      <div class="why-item">
+        <div class="wi-ic">🥂</div>
+        <div><div class="wi-t">洛杉矶本地品鉴与服务</div><div class="wi-d">于洛杉矶定期举办会员品鉴沙龙与社交活动，本地团队全程对接。</div></div>
+      </div>
+      <div class="why-item">
+        <div class="wi-ic">⚜️</div>
+        <div><div class="wi-t">法国庄园与圣埃美隆文化体验</div><div class="wi-d">亲赴法国，体验圣埃美隆骑士庆典、百年庄园接待与深度风土之旅。</div></div>
+      </div>
+      <div class="why-item">
+        <div class="wi-ic">🤝</div>
+        <div><div class="wi-t">私人礼宾顾问对接</div><div class="wi-d">专属礼宾顾问一对一服务，从酒款选购到行程安排全程协助。</div></div>
+      </div>
+      <div class="why-item">
+        <div class="wi-ic">🌐</div>
+        <div><div class="wi-t">中英文沟通服务</div><div class="wi-d">中英双语沟通，无论身处北美或往返中法，均可顺畅对接。</div></div>
+      </div>
+    </div>
+    <p class="why-note">活动、酒款、价格、库存及付款条款，均以正式确认文件为准。</p>
+  </div>
+</section>
+
 <!-- MEMBERSHIP -->
-<section id="membership">
+<section id="membership" class="alt">
   <div class="container">
     <div class="section-head">
       <div class="kicker">Membership · 法国骑士会员</div>
@@ -1036,6 +1175,7 @@
           <li><span class="ck">✦</span><span>骑士会员身份认证与社群礼遇</span></li>
           <li><span class="ck">✦</span><span>升级更高方案享专属折抵</span></li>
         </ul>
+        <div class="fit"><b>适合谁</b>适合洛杉矶本地葡萄酒爱好者、希望参加高端品鉴沙龙与社交活动的人。</div>
         <div class="foot">
           <a href="#join" class="btn btn-ghost" style="border-color:var(--wine);color:var(--wine)">选择方案 1</a>
         </div>
@@ -1057,6 +1197,7 @@
           <li><span class="ck">✦</span><span>葡萄采收开幕庆典 + 名庄酒窖品鉴</span></li>
           <li><span class="ck">✦</span><span>含方案 1 全部本地活动权益</span></li>
         </ul>
+        <div class="fit"><b>适合谁</b>适合希望亲赴法国、体验圣埃美隆庆典、庄园接待和骑士文化的夫妻或家庭。</div>
         <div class="foot">
           <a href="#join" class="btn btn-gold">选择方案 2</a>
         </div>
@@ -1077,6 +1218,7 @@
           <li><span class="ck">✦</span><span>稀有年份珍藏品鉴与私人收藏机会</span></li>
           <li><span class="ck">✦</span><span>含方案 2 全部庄园与本地活动权益</span></li>
         </ul>
+        <div class="fit"><b>适合谁</b>适合高端收藏家、企业主、私人圈层社交客户，以及希望获得定制行程与稀缺酒款资源的人。</div>
         <div class="foot">
           <a href="#join" class="btn btn-ghost" style="border-color:var(--wine);color:var(--wine)">选择方案 3</a>
         </div>
@@ -1137,24 +1279,40 @@
     <p class="lead" style="margin-bottom:40px">名额有限，敬请尽早登记。我们的礼宾顾问将在收到信息后与您联系，确认会员资格与行程细节。</p>
     <div class="form-wrap">
       <form id="joinForm">
-        <label for="name">姓名</label>
+        <label for="name">姓名 Name</label>
         <input type="text" id="name" placeholder="请输入您的姓名" required>
 
-        <label for="phone">联系电话</label>
+        <label for="phone">联系电话 Phone</label>
         <input type="tel" id="phone" placeholder="请输入手机号码" required>
 
-        <label for="email">电子邮箱</label>
+        <label for="email">电子邮箱 Email</label>
         <input type="email" id="email" placeholder="your@email.com" required>
 
-        <label for="tier">意向会员方案</label>
+        <label>偏好联系方式 Preferred Contact Method</label>
+        <div class="chip-row">
+          <label class="chip"><input type="radio" name="contact" value="电话 Phone" checked>电话 Phone</label>
+          <label class="chip"><input type="radio" name="contact" value="邮箱 Email">邮箱 Email</label>
+          <label class="chip"><input type="radio" name="contact" value="微信 WeChat">微信 WeChat</label>
+        </div>
+
+        <label>意向方向 Interested In（可多选）</label>
+        <div class="chip-row">
+          <label class="chip"><input type="checkbox" name="interest" value="葡萄酒采购 Wine Purchase">葡萄酒采购 Wine Purchase</label>
+          <label class="chip"><input type="checkbox" name="interest" value="洛杉矶品鉴 LA Tasting Event">洛杉矶品鉴 LA Tasting</label>
+          <label class="chip"><input type="checkbox" name="interest" value="波尔多之旅 Bordeaux Trip">波尔多之旅 Bordeaux Trip</label>
+          <label class="chip"><input type="checkbox" name="interest" value="会员计划 Membership">会员计划 Membership</label>
+          <label class="chip"><input type="checkbox" name="interest" value="尚未确定 Not Sure Yet">尚未确定 Not Sure Yet</label>
+        </div>
+
+        <label for="tier">意向会员方案 Membership Tier</label>
         <select id="tier">
-          <option>方案 1 · $5,000/人（洛杉矶本地活动 2 次/年）</option>
-          <option selected>方案 2 · $20,000/一对夫妻（法国庄园贵族骑士 3 天接待）</option>
-          <option>方案 3 · $50,000/人（专属顶级私定礼遇）</option>
+          <option>方案 1 · 银爵 $5,000/人（洛杉矶本地活动 2 次/年）</option>
+          <option selected>方案 2 · 金爵 $20,000/一对夫妻（法国庄园贵族骑士 3 天接待）</option>
+          <option>方案 3 · 御爵 $50,000/人（专属顶级私定礼遇）</option>
           <option>尚未决定，希望顾问推荐</option>
         </select>
 
-        <label for="guests">出行人数</label>
+        <label for="guests">出行人数 Guests</label>
         <select id="guests">
           <option>1 位</option>
           <option>2 位</option>
@@ -1162,8 +1320,14 @@
           <option>4 位及以上</option>
         </select>
 
-        <button type="submit" class="btn btn-gold">提交报名 · 成为会员</button>
-        <p class="form-note">提交即表示您希望了解会员资格详情，我们将尽快与您联系。</p>
+        <label for="selectedWine">意向酒款 Selected Wine</label>
+        <input type="text" id="selectedWine" placeholder="在上方酒单点击「咨询这款酒 / 预订整箱」会自动填入，也可手动填写">
+
+        <label for="notes">留言 / 备注 Message / Notes</label>
+        <textarea id="notes" placeholder="如有特别需求、想咨询的酒款或行程，请在此说明"></textarea>
+
+        <button type="submit" class="btn btn-gold">提交申请 · Submit</button>
+        <p class="form-note">提交即表示您希望了解会员资格与酒款详情，我们将尽快与您联系。</p>
       </form>
       <div class="form-success" id="formSuccess">
         ✦ 感谢您的登记！我们的礼宾顾问将尽快与您联系，确认 2026 波尔多庆典的专属席位。
@@ -1185,8 +1349,13 @@
      <a href="tel:+19493107358" style="color:var(--gold-soft)">+1 (949) 310-7358</a>　|
      <a href="mailto:sophia081927@gmail.com" style="color:var(--gold-soft)">sophia081927@gmail.com</a></p>
   <p class="fine">
-    本页面为活动宣传示意页面。所有行程、权益及会员资格以官方正式条款为准。
-    请在加入任何会员计划或支付费用前，核实主办方资质与活动真实性，谨防诈骗。
+    本网站仅面向 21 岁及以上成年人。所有酒类购买、配送及活动参与须遵守所在地酒类法规。
+    所有会员资格、活动名额、行程安排、酒款年份、库存、价格、付款方式及退改条款，均以正式确认文件及双方签署协议为准。
+  </p>
+  <p class="fine" style="opacity:.42;margin-top:12px">
+    This website is intended for adults aged 21 and over. All wine purchases, shipments, and event participation must comply with
+    applicable alcohol laws and regulations. Membership eligibility, event availability, itineraries, wine vintages, inventory,
+    pricing, payment terms, and cancellation policies are subject to formal confirmation and written agreement.
   </p>
 </footer>
 
@@ -1203,6 +1372,43 @@
     document.getElementById('formSuccess').style.display = 'block';
     document.getElementById('formSuccess').scrollIntoView({behavior:'smooth',block:'center'});
   });
+
+  // ---- 为每款酒注入行动按钮：咨询 / 预订整箱 / 加入品鉴清单 ----
+  (function(){
+    var cards = document.querySelectorAll('#wines .wine');
+    cards.forEach(function(card){
+      var nameEl = card.querySelector('.wname');
+      if(!nameEl) return;
+      var name = nameEl.textContent.trim();
+      var bar = document.createElement('div');
+      bar.className = 'wactions';
+      var b1 = document.createElement('button'); b1.type='button'; b1.className='wbtn primary'; b1.textContent='咨询这款酒';
+      var b2 = document.createElement('button'); b2.type='button'; b2.className='wbtn'; b2.textContent='预订整箱';
+      var b3 = document.createElement('button'); b3.type='button'; b3.className='wbtn'; b3.textContent='加入品鉴清单';
+      b1.addEventListener('click', function(){ pickWine(name, '咨询'); });
+      b2.addEventListener('click', function(){ pickWine(name, '整箱'); });
+      b3.addEventListener('click', function(){ pickWine(name, '品鉴清单'); });
+      bar.appendChild(b1); bar.appendChild(b2); bar.appendChild(b3);
+      card.appendChild(bar);
+    });
+  })();
+
+  function pickWine(name, action){
+    var sel = document.getElementById('selectedWine');
+    if(!sel) return;
+    var entry = (action === '咨询') ? name : name + '（' + action + '）';
+    var items = sel.value.trim() ? sel.value.split('；').map(function(s){return s.trim();}).filter(Boolean) : [];
+    if(items.indexOf(entry) === -1) items.push(entry);
+    sel.value = items.join('；');
+    // 勾选「葡萄酒采购」意向
+    var wp = document.querySelector('input[name="interest"][value="葡萄酒采购 Wine Purchase"]');
+    if(wp) wp.checked = true;
+    // 滚动到报名表并高亮该字段
+    document.getElementById('join').scrollIntoView({behavior:'smooth', block:'start'});
+    sel.classList.add('glow');
+    setTimeout(function(){ try{ sel.focus({preventScroll:true}); }catch(e){ sel.focus(); } }, 600);
+    setTimeout(function(){ sel.classList.remove('glow'); }, 2200);
+  }
 
   function copyLink(){
     var url = window.location.href;
