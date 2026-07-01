@@ -1525,6 +1525,9 @@
     本网站内容仅供文化体验、会员咨询与活动信息参考。酒款年份、价格、库存、评分、行程、活动席位及官方仪式安排，均以最终确认为准。
     酒类购买与配送须遵守所在地区法律法规。本网站仅面向 21 岁及以上成年人。请理性饮酒。
   </p>
+  <p class="fine" style="opacity:.42;margin-top:12px" data-en="Background music uses public domain or royalty-free classical music and is provided only to enhance the château wine culture and evening hospitality atmosphere. Music: Chopin, Nocturne Op. 9 No. 2 (Public Domain, via Wikimedia Commons).">
+    背景音乐采用公版或免版权古典音乐，仅用于营造庄园文化与红酒晚宴氛围。乐曲：肖邦《夜曲》Op. 9 No. 2（公有领域，来源 Wikimedia Commons）。
+  </p>
 </footer>
 
 <!-- 手机端常驻报名条 -->
@@ -1681,8 +1684,8 @@
   audio.loop = true; audio.volume = VOL;
 
   var TXT = {
-    zh: { play:'♫ 播放庄园音乐', pause:'❚❚ 暂停音乐', playSub:'Play Château Music', pauseSub:'Pause Music', soon:'♫ 庄园音乐 · 即将上线' },
-    en: { play:'♫ Play Château Music', pause:'❚❚ Pause Music', soon:'♫ Château Music · Coming soon' }
+    zh: { play:'♫ 播放庄园音乐', pause:'❚❚ 暂停音乐', playSub:'Play Château Music', pauseSub:'Pause Music', soon:'♫ 音乐暂时无法播放', soonFull:'音乐暂时无法播放，请稍后再试。' },
+    en: { play:'♫ Play Château Music', pause:'❚❚ Pause Music', soon:'♫ Music unavailable', soonFull:'Music is temporarily unavailable. Please try again later.' }
   };
   function lang(){ return window.CURRENT_LANG === 'en' ? 'en' : 'zh'; }
 
@@ -1695,9 +1698,11 @@
       btn.classList.add('is-disabled'); btn.classList.remove('playing');
       icon.textContent = '♫';
       main.textContent = TXT[L].soon; sub.textContent = '';
-      btn.setAttribute('aria-label', L==='en' ? 'Music coming soon' : '音乐即将上线');
+      btn.setAttribute('aria-label', TXT[L].soonFull);
+      btn.setAttribute('title', TXT[L].soonFull);
       return;
     }
+    btn.removeAttribute('title');
     btn.classList.remove('is-disabled');
     btn.classList.toggle('playing', playing);
     icon.textContent = playing ? '❚❚' : '♫';
