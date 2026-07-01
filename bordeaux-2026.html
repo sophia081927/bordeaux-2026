@@ -58,10 +58,19 @@
     border-bottom:1px solid rgba(184,144,71,.35);
   }
   nav .brand{color:var(--gold-soft);font-size:20px;letter-spacing:.18em;font-weight:600}
+  nav .nav-right{display:flex;align-items:center;gap:20px}
   nav .links{display:flex;gap:19px;font-size:13px}
   nav .links a{color:var(--cream);opacity:.85;transition:opacity .2s,color .2s}
   nav .links a:hover{opacity:1;color:var(--gold-soft)}
-  @media(max-width:760px){nav .links{display:none}}
+  .lang-switch{display:inline-flex;border:1px solid rgba(184,144,71,.55);border-radius:30px;overflow:hidden;flex-shrink:0}
+  .lang-btn{
+    background:transparent;color:var(--cream);border:none;font-family:inherit;
+    font-size:12px;letter-spacing:.08em;padding:6px 13px;cursor:pointer;opacity:.68;transition:background .2s,color .2s,opacity .2s;
+  }
+  .lang-btn.active{background:var(--gold);color:var(--wine-deep);opacity:1;font-weight:700}
+  .lang-btn:hover{opacity:1}
+  @media(max-width:1120px){nav .links{display:none}}
+  nav .brand{white-space:nowrap}
 
   /* ============ HERO ============ */
   .hero{
@@ -527,36 +536,42 @@
 
 <nav>
   <div class="brand">VIGNES DU SOLEIL</div>
-  <div class="links">
-    <a href="#about">庆典概览</a>
-    <a href="#heritage">骑士团历史</a>
-    <a href="#virtues">骑士八德</a>
-    <a href="#celebrations">两大庆典</a>
-    <a href="#terroir">产区风土</a>
-    <a href="#vintage">年份指南</a>
-    <a href="#gallery">仪式掠影</a>
-    <a href="#ranks">会员等级</a>
-    <a href="#itinerary">行程安排</a>
-    <a href="#wines">名庄酒单</a>
-    <a href="#membership">会员方案</a>
-    <a href="#faq">常见问题</a>
-    <a href="#join">立即报名</a>
+  <div class="nav-right">
+    <div class="links">
+      <a href="#about" data-en="Overview">庆典概览</a>
+      <a href="#heritage" data-en="The Jurade">骑士团历史</a>
+      <a href="#virtues" data-en="Eight Virtues">骑士八德</a>
+      <a href="#celebrations" data-en="Celebrations">两大庆典</a>
+      <a href="#terroir" data-en="Terroir">产区风土</a>
+      <a href="#vintage" data-en="Vintages">年份指南</a>
+      <a href="#gallery" data-en="Moments">仪式掠影</a>
+      <a href="#ranks" data-en="Categories">会员等级</a>
+      <a href="#itinerary" data-en="Itinerary">行程安排</a>
+      <a href="#wines" data-en="Wine Selection">名庄酒单</a>
+      <a href="#membership" data-en="Membership">会员方案</a>
+      <a href="#faq" data-en="FAQ">常见问题</a>
+      <a href="#join" data-en="Apply">立即报名</a>
+    </div>
+    <div class="lang-switch">
+      <button type="button" class="lang-btn" data-lang="zh" onclick="setLang('zh')">中文</button>
+      <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
   </div>
 </nav>
 
 <!-- HERO -->
 <header class="hero">
   <div class="eyebrow">Jurade de Saint-Émilion · Bordeaux · 2026</div>
-  <h1>Vignes du Soleil<br><span class="accent">圣埃美隆骑士盛宴</span></h1>
-  <p class="tagline">这是一项面向高端葡萄酒爱好者的波尔多文化会员体验：名庄直采葡萄酒、洛杉矶品鉴沙龙、法国圣埃美隆骑士庆典与庄园深度之旅。</p>
-  <p class="tagline-en">A private Bordeaux wine culture membership experience, connecting collectors and wine lovers with château-direct selections, Los Angeles tasting salons, and an exclusive Saint-Émilion harvest celebration journey.</p>
-  <p class="sub">追随圣埃美隆骑士团（Jurade de Saint-Émilion）八百余年的古法仪典，于金秋九月的法国波尔多，踏入千年古镇与百年庄园，赴一场贵族骑士古法盛宴。</p>
-  <div class="year-badge">始于 1199 年 · 传承八百余年</div>
+  <h1 data-en="Vignes du Soleil<br><span class=&quot;accent&quot;>Saint-Émilion Knights&#39; Celebration</span>">Vignes du Soleil<br><span class="accent">圣埃美隆骑士盛宴</span></h1>
+  <p class="tagline" data-en="A private Bordeaux wine culture, château hospitality, and exclusive social membership experience for discerning families and collectors in North America.">这是一项面向高端葡萄酒爱好者的波尔多文化会员体验：名庄直采葡萄酒、洛杉矶品鉴沙龙、法国圣埃美隆骑士庆典与庄园深度之旅。</p>
+  <p class="tagline-en" data-en="">A private Bordeaux wine culture membership experience, connecting collectors and wine lovers with château-direct selections, Los Angeles tasting salons, and an exclusive Saint-Émilion harvest celebration journey.</p>
+  <p class="sub" data-en="Step into the golden harvest season of Bordeaux and experience the centuries-old traditions of Saint-Émilion — where wine, heritage, ceremony, and private hospitality come together in an unforgettable château journey.">追随圣埃美隆骑士团（Jurade de Saint-Émilion）八百余年的古法仪典，于金秋九月的法国波尔多，踏入千年古镇与百年庄园，赴一场贵族骑士古法盛宴。</p>
+  <div class="year-badge" data-en="Est. 1199 · Over eight centuries of heritage">始于 1199 年 · 传承八百余年</div>
   <div class="cta-row">
-    <a href="#join" class="btn btn-gold">申请会员 · 预留席位<span class="btn-en">Apply for Membership</span></a>
-    <a href="#itinerary" class="btn btn-ghost">查看三日行程</a>
+    <a href="#join" class="btn btn-gold" data-en="Become a Member · Attend the Celebration">申请会员 · 预留席位<span class="btn-en">Apply for Membership</span></a>
+    <a href="#itinerary" class="btn btn-ghost" data-en="View the Three-Day Journey">查看三日行程</a>
   </div>
-  <div class="scroll-hint">向下滚动 ▾</div>
+  <div class="scroll-hint" data-en="Scroll ▾">向下滚动 ▾</div>
 </header>
 
 <!-- ABOUT -->
@@ -564,10 +579,10 @@
   <div class="container">
     <div class="section-head">
       <div class="kicker">The Celebration</div>
-      <h2>金秋九月 · 波尔多的盛大开幕</h2>
+      <h2 data-en="September in Bordeaux · The Opening of the Harvest Season">金秋九月 · 波尔多的盛大开幕</h2>
       <div class="rule"></div>
     </div>
-    <p class="lead">
+    <p class="lead" data-en="Each September, as the vineyards of Bordeaux turn gold and crimson, Saint-Émilion welcomes one of its most meaningful traditions — the opening of the grape harvest. More than a seasonal celebration, it is a living ceremony of wine, heritage, and community. Members are invited to stay in a private château, join the harvest opening rituals, and experience the elegance of Bordeaux through curated tastings, dinners, and cultural encounters.">
       每年九月，当波尔多的葡萄园染上金红，便迎来一年中最隆重的时刻——葡萄采收开幕庆典。
       这不仅是丰收的序章，更是一场延续了近千年的贵族仪典。本年度，我们诚邀尊贵会员亲临现场，
       入住法国百年庄园，与骑士、酿酒世家与名流共襄盛举。
@@ -580,29 +595,29 @@
   <div class="container">
     <div class="section-head">
       <div class="kicker">Exclusive Experiences</div>
-      <h2>四大尊享体验</h2>
+      <h2 data-en="Four Signature Experiences">四大尊享体验</h2>
       <div class="rule"></div>
     </div>
     <div class="grid">
       <div class="card">
         <div class="icon">🍇</div>
-        <h3>采收开幕仪式</h3>
-        <p>亲手剪下本季第一串葡萄，参与传统祝酒与祈福仪式，见证波尔多新年份的诞生。</p>
+        <h3 data-en="Harvest Opening Ceremony">采收开幕仪式</h3>
+        <p data-en="Join the symbolic opening of the harvest season, witness traditional blessings and toasts, and celebrate the birth of a new Bordeaux vintage.">亲手剪下本季第一串葡萄，参与传统祝酒与祈福仪式，见证波尔多新年份的诞生。</p>
       </div>
       <div class="card">
         <div class="icon">⚔️</div>
-        <h3>贵族骑士盛宴</h3>
-        <p>身着礼服，出席源自十一世纪的骑士晚宴，欣赏中世纪礼仪、长桌烛光与古典乐章。</p>
+        <h3 data-en="Knights’ Gala Dinner">贵族骑士盛宴</h3>
+        <p data-en="Dress formally for an atmospheric evening inspired by medieval ceremony — candlelit tables, classical music, and the traditions of Saint-Émilion.">身着礼服，出席源自十一世纪的骑士晚宴，欣赏中世纪礼仪、长桌烛光与古典乐章。</p>
       </div>
       <div class="card">
         <div class="icon">🏰</div>
-        <h3>百年庄园下榻</h3>
-        <p>会员权益包含法国庄园三日接待，于葡萄园环抱的城堡客房中，享受庄主级的私人礼遇。</p>
+        <h3 data-en="Château Hospitality">百年庄园下榻</h3>
+        <p data-en="Enjoy three days of private château hospitality, surrounded by vineyards and hosted with the warmth and refinement of a Bordeaux estate.">会员权益包含法国庄园三日接待，于葡萄园环抱的城堡客房中，享受庄主级的私人礼遇。</p>
       </div>
       <div class="card">
         <div class="icon">🍷</div>
-        <h3>名庄品鉴之旅</h3>
-        <p>由首席酿酒师亲自导览酒窖，垂直品鉴跨年份珍藏，深入了解波尔多风土。</p>
+        <h3 data-en="Grand Château Tastings">名庄品鉴之旅</h3>
+        <p data-en="Explore cellars guided by winemakers or estate representatives, with curated tastings across selected vintages and appellations.">由首席酿酒师亲自导览酒窖，垂直品鉴跨年份珍藏，深入了解波尔多风土。</p>
       </div>
     </div>
   </div>
@@ -614,41 +629,41 @@
     <div class="big-num">1199</div>
     <div class="section-head" style="margin-bottom:0">
       <div class="kicker" style="color:var(--gold)">Jurade de Saint-Émilion</div>
-      <h2>八百余年的圣埃美隆骑士团</h2>
+      <h2 data-en="The Jurade of Saint-Émilion · Over Eight Centuries of Heritage">八百余年的圣埃美隆骑士团</h2>
       <div class="rule"></div>
     </div>
-    <p>
+    <p data-en="Saint-Émilion holds one of the oldest wine traditions in France. According to publicly available accounts, the Jurade of Saint-Émilion was established in 1199, entrusted with the governance and oversight of viticulture and winemaking in the region — an early guardian of quality and appellation.">
       据圣埃美隆酒会公开史料记载：1152 年，阿基坦公爵领（即今日波尔多所在地区）仍处于英格兰王室统治之下，
       随着本笃会修士的到来，圣埃美隆（Saint-Émilion）的宗教影响力日渐扩大，成为当地重要的精神圣地。
       相传 1199 年，英格兰国王「无地王约翰」为制衡教会势力，授权设立圣埃美隆酒会／骑士团（Jurade de Saint-Émilion），
       赋予其管理与监督葡萄种植、酿造的职责，圣埃美隆自此进入自治时期。
     </p>
-    <p>
+    <p data-en="For centuries the Jurade watched over the quality of Saint-Émilion’s wines, upholding a tradition of craftsmanship and stewardship. As one of France’s oldest wine fraternities, it endured through the ages and returned to the international stage in 1948, renewing its ceremonial heritage.">
       当时圣埃美隆的美酒常作贡品献予英格兰国王。骑士团亲自监管品质：通过审核的酒桶获颁
       「Marque à feu du vinetier」酒商火印，不合格者则被销毁。秉持「维护信仰、扶助困厄者」的宗旨，
       圣埃美隆酒会是法国最古老的行会组织之一，历经数百年兴衰，直至 1948 年重返国际舞台。
     </p>
-    <p>
+    <p data-en="Today the Jurade is a modern cultural institution devoted to promoting the wines and heritage of Saint-Émilion internationally. Its members span the world of wine and beyond, welcoming those who share a genuine appreciation for its culture.">
       如今，酒会已完成现代化改革，专注于推广圣埃美隆产区葡萄酒的贸易与文化。据酒会公开介绍，
       其成员遍布葡萄酒业界与社会各界；凡具备一定葡萄酒知识、获现有成员推荐并缴纳会费者，皆可申请加入。
     </p>
-    <p class="src-note">注：以上历史与会员信息据圣埃美隆酒会（Jurade de Saint-Émilion）公开资料整理，具体以酒会官方说明为准。</p>
+    <p class="src-note" data-en="Note: Historical and membership-related information is summarized from publicly available materials of the Jurade of Saint-Émilion. Final interpretation and current rules are subject to the official organization.">注：以上历史与会员信息据圣埃美隆酒会（Jurade de Saint-Émilion）公开资料整理，具体以酒会官方说明为准。</p>
     <div class="milestones">
       <div class="milestone">
         <div class="yr">1199</div>
-        <p>「无地王约翰」建立圣埃美隆骑士团，开启自治时代。</p>
+        <p data-en="The Jurade of Saint-Émilion is established, beginning an era of self-governance.">「无地王约翰」建立圣埃美隆骑士团，开启自治时代。</p>
       </div>
       <div class="milestone">
         <div class="yr">1948</div>
-        <p>历经数百年兴衰后正式重返国际舞台，开启现代复兴。</p>
+        <p data-en="After centuries of history, the Jurade returns to the international stage — a modern revival.">历经数百年兴衰后正式重返国际舞台，开启现代复兴。</p>
       </div>
       <div class="milestone">
         <div class="yr">800+</div>
-        <p>历经八百余年传承，骑士团仪典从未中断。</p>
+        <p data-en="Over eight centuries of unbroken ceremonial tradition.">历经八百余年传承，骑士团仪典从未中断。</p>
       </div>
       <div class="milestone">
-        <div class="yr">数千</div>
-        <p>据酒会公开介绍，成员遍布葡萄酒业界、商界与社会各界。</p>
+        <div class="yr" data-en="Global">数千</div>
+        <p data-en="Members span the world of wine, business, and society, per the organization’s public information.">据酒会公开介绍，成员遍布葡萄酒业界、商界与社会各界。</p>
       </div>
     </div>
   </div>
@@ -659,19 +674,19 @@
   <div class="container">
     <div class="section-head">
       <div class="kicker">The Eight Virtues</div>
-      <h2>圣埃美隆骑士八德</h2>
+      <h2 data-en="The Eight Virtues of the Knights">圣埃美隆骑士八德</h2>
       <div class="rule"></div>
     </div>
-    <p class="lead" style="margin-bottom:46px">骑士团世代恪守八项骑士美德，它们是受封骑士所承载的精神与荣耀。</p>
+    <p class="lead" style="margin-bottom:46px" data-en="These virtues represent the spirit carried by the ceremonial tradition of Saint-Émilion — a code of dignity, hospitality, responsibility, and cultural stewardship.">骑士团世代恪守八项骑士美德，它们是受封骑士所承载的精神与荣耀。</p>
     <div class="virtue-grid">
-      <div class="virtue"><div class="sym">🕊️</div><div class="en">Compassion</div><div class="cn">仁慈</div></div>
-      <div class="virtue"><div class="sym">🎖️</div><div class="en">Honor</div><div class="cn">荣誉</div></div>
-      <div class="virtue"><div class="sym">🦁</div><div class="en">Courage</div><div class="cn">勇气</div></div>
-      <div class="virtue"><div class="sym">✝️</div><div class="en">Faith</div><div class="cn">信仰</div></div>
-      <div class="virtue"><div class="sym">🔥</div><div class="en">Sacrifice</div><div class="cn">牺牲</div></div>
-      <div class="virtue"><div class="sym">🙇</div><div class="en">Humility</div><div class="cn">谦逊</div></div>
-      <div class="virtue"><div class="sym">⚖️</div><div class="en">Justice</div><div class="cn">正义</div></div>
-      <div class="virtue"><div class="sym">🛡️</div><div class="en">Integrity</div><div class="cn">诚信</div></div>
+      <div class="virtue"><div class="sym">🕊️</div><div class="en" data-en="">Compassion</div><div class="cn" data-en="Compassion">仁慈</div></div>
+      <div class="virtue"><div class="sym">🎖️</div><div class="en" data-en="">Honor</div><div class="cn" data-en="Honor">荣誉</div></div>
+      <div class="virtue"><div class="sym">🦁</div><div class="en" data-en="">Courage</div><div class="cn" data-en="Courage">勇气</div></div>
+      <div class="virtue"><div class="sym">✝️</div><div class="en" data-en="">Faith</div><div class="cn" data-en="Faith">信仰</div></div>
+      <div class="virtue"><div class="sym">🔥</div><div class="en" data-en="">Sacrifice</div><div class="cn" data-en="Sacrifice">牺牲</div></div>
+      <div class="virtue"><div class="sym">🙇</div><div class="en" data-en="">Humility</div><div class="cn" data-en="Humility">谦逊</div></div>
+      <div class="virtue"><div class="sym">⚖️</div><div class="en" data-en="">Justice</div><div class="cn" data-en="Justice">正义</div></div>
+      <div class="virtue"><div class="sym">🛡️</div><div class="en" data-en="">Integrity</div><div class="cn" data-en="Integrity">诚信</div></div>
     </div>
   </div>
 </section>
@@ -681,31 +696,31 @@
   <div class="container">
     <div class="section-head">
       <div class="kicker">Two Annual Celebrations</div>
-      <h2>两大年度盛典</h2>
+      <h2 data-en="Two Annual Celebrations">两大年度盛典</h2>
       <div class="rule"></div>
     </div>
-    <p class="lead" style="margin-bottom:46px">圣埃美隆骑士团每年举办两次重要庆典，亦是新成员受封授勋的隆重时刻。</p>
+    <p class="lead" style="margin-bottom:46px" data-en="The Jurade of Saint-Émilion holds two important celebrations each year — also the ceremonial moments when new members are inducted.">圣埃美隆骑士团每年举办两次重要庆典，亦是新成员受封授勋的隆重时刻。</p>
     <div class="celebr-grid">
       <div class="celebr">
         <div class="bar">
-          <div class="mon">June · 六月</div>
-          <h3>花期开幕庆典</h3>
+          <div class="mon" data-en="June">June · 六月</div>
+          <h3 data-en="The Flower Festival">花期开幕庆典</h3>
           <div class="fr">Fête de la Fleur</div>
         </div>
-        <div class="desc">当葡萄花盛放，骑士团在初夏举行庆典，为新一年的收成祈福，预祝风土与气候的眷顾。</div>
+        <div class="desc" data-en="Held in June, this celebration marks the flowering of the vines and offers blessings for the coming vintage.">当葡萄花盛放，骑士团在初夏举行庆典，为新一年的收成祈福，预祝风土与气候的眷顾。</div>
       </div>
       <div class="celebr">
         <div class="bar">
-          <div class="mon">September · 九月</div>
-          <h3>葡萄采收开幕庆典</h3>
+          <div class="mon" data-en="September">September · 九月</div>
+          <h3 data-en="The Harvest Proclamation">葡萄采收开幕庆典</h3>
           <div class="fr">Ban des Vendanges</div>
         </div>
-        <div class="desc">金秋时节，骑士团正式宣布采收季开启，举行盛大游行、弥撒与贵族骑士盛宴，共庆丰收。</div>
+        <div class="desc" data-en="Held in September, this ceremony officially opens the grape harvest season, often accompanied by procession, blessing, and festive gatherings.">金秋时节，骑士团正式宣布采收季开启，举行盛大游行、弥撒与贵族骑士盛宴，共庆丰收。</div>
       </div>
     </div>
     <div class="investiture">
-      <h3>✦ 庄严授勋仪式 · 全球举办</h3>
-      <p>
+      <h3 data-en="✦ Ceremonial Investiture · Held Worldwide">✦ 庄严授勋仪式 · 全球举办</h3>
+      <p data-en="During the celebrations in June and September, formal investiture ceremonies are held, where new members are inducted in traditional robes according to time-honoured rites. According to the organization, such ceremonies are also held in cities around the world, including <strong>Hong Kong, Shanghai, and New York</strong>. Those with a lasting commitment to French wine culture may have the opportunity to learn more about this heritage of honour.">
         每年 6 月新酒评鉴与 9 月采收开幕庆典期间，均举行隆重授勋仪式——新成员身着传统红袍与披肩，
         在古老仪轨中正式受封。据酒会公开介绍，其授勋仪式亦在全球多地举办，足迹遍及 <strong>香港、上海与纽约</strong>，
         吸引葡萄酒业界与社会各界人士加入。当您长期支持法国葡萄酒文化与产业，亦有机会获邀了解这一荣誉传统。
@@ -719,7 +734,7 @@
   <div class="container">
     <div class="section-head">
       <div class="kicker">Moments of the Jurade</div>
-      <h2>仪式掠影</h2>
+      <h2 data-en="Ceremony Moments">仪式掠影</h2>
       <div class="rule"></div>
     </div>
     <div class="gallery">
@@ -728,27 +743,27 @@
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="ph" style="display:none">
           <div class="ic">🖼️</div>
-          <div class="t">红袍骑士 · 受封交谈</div>
+          <div class="t" data-en="Robed Knights · In Conversation">红袍骑士 · 受封交谈</div>
         </div>
-        <div class="cap">身着红袍披肩的骑士团成员</div>
+        <div class="cap" data-en="Members of the Jurade in ceremonial robes">身着红袍披肩的骑士团成员</div>
       </div>
       <div class="shot">
         <img src="images/ceremony-2.jpg" alt="教堂内的授勋仪式"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="ph" style="display:none">
           <div class="ic">🖼️</div>
-          <div class="t">古老教堂 · 授勋仪式</div>
+          <div class="t" data-en="Historic Church · Investiture">古老教堂 · 授勋仪式</div>
         </div>
-        <div class="cap">圣埃美隆教堂内的庄严授勋</div>
+        <div class="cap" data-en="A solemn investiture within the church of Saint-Émilion">圣埃美隆教堂内的庄严授勋</div>
       </div>
       <div class="shot">
         <img src="images/poster.jpg" alt="Vignes du Soleil 会员海报"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="ph" style="display:none">
           <div class="ic">⚜️</div>
-          <div class="t">Vignes du Soleil · 会员甄选</div>
+          <div class="t" data-en="Vignes du Soleil · Member Selection">Vignes du Soleil · 会员甄选</div>
         </div>
-        <div class="cap">Vignes du Soleil 会员甄选</div>
+        <div class="cap" data-en="Vignes du Soleil · Member Selection">Vignes du Soleil 会员甄选</div>
       </div>
     </div>
   </div>
@@ -759,46 +774,46 @@
   <div class="container">
     <div class="section-head">
       <div class="kicker">Six Categories of Membership</div>
-      <h2>六大会员等级与类别</h2>
+      <h2 data-en="Six Categories of Membership">六大会员等级与类别</h2>
       <div class="rule"></div>
     </div>
-    <p class="lead" style="margin-bottom:46px">酒会成员依职业与身份授予六个等级／类别，各司其责，共同守护圣埃美隆的荣耀。</p>
+    <p class="lead" style="margin-bottom:46px" data-en="Members of the Jurade are appointed across six categories by vocation and standing, each with its own role in upholding the honour of Saint-Émilion.">酒会成员依职业与身份授予六个等级／类别，各司其责，共同守护圣埃美隆的荣耀。</p>
     <div class="ranks">
       <div class="rank">
         <div class="num">01</div>
-        <h3>酒会守护者</h3>
+        <h3 data-en="Protectors of the Jurade">酒会守护者</h3>
         <div class="fr">Protectors of the Jurade</div>
-        <p>授予政府领袖及王室成员。</p>
+        <p data-en="Conferred upon heads of state and members of royal families.">授予政府领袖及王室成员。</p>
       </div>
       <div class="rank">
         <div class="num">02</div>
-        <h3>酒会同侪</h3>
+        <h3 data-en="Peers of the Jurade">酒会同侪</h3>
         <div class="fr">Peers of the Jurade</div>
-        <p>授予在政治、外交、艺术、文学、农业、军事等领域有卓越贡献人士。</p>
+        <p data-en="Conferred upon those of distinction in politics, diplomacy, the arts, literature, agriculture, and the military.">授予在政治、外交、艺术、文学、农业、军事等领域有卓越贡献人士。</p>
       </div>
       <div class="rank">
         <div class="num">03</div>
-        <h3>神职与宗教界成员</h3>
+        <h3 data-en="Clergy &amp; Religious Members">神职与宗教界成员</h3>
         <div class="fr">Grand Aumôniers · Aumôniers · Prieurs</div>
-        <p>授予神职人员及宗教界人士。</p>
+        <p data-en="Conferred upon members of the clergy and religious community.">授予神职人员及宗教界人士。</p>
       </div>
       <div class="rank">
         <div class="num">04</div>
-        <h3>酒会女爵</h3>
+        <h3 data-en="Dames of the Jurade">酒会女爵</h3>
         <div class="fr">Dames de la Jurade</div>
-        <p>授予酒会的女性成员。</p>
+        <p data-en="Conferred upon the women members of the Jurade.">授予酒会的女性成员。</p>
       </div>
       <div class="rank">
         <div class="num">05</div>
-        <h3>荣誉成员</h3>
+        <h3 data-en="Honorary Members">荣誉成员</h3>
         <div class="fr">Prud'Hommes de la Jurade</div>
-        <p>授予酒商、中介、餐厅经营者、侍酒师、采购商等。</p>
+        <p data-en="Conferred upon merchants, brokers, restaurateurs, sommeliers, and buyers.">授予酒商、中介、餐厅经营者、侍酒师、采购商等。</p>
       </div>
       <div class="rank">
         <div class="num">06</div>
-        <h3>荣誉酿酒师</h3>
+        <h3 data-en="Honorary Winemakers">荣誉酿酒师</h3>
         <div class="fr">Honorary Winemakers</div>
-        <p>授予葡萄酒酿造行业人士。</p>
+        <p data-en="Conferred upon those in the art and craft of winemaking.">授予葡萄酒酿造行业人士。</p>
       </div>
     </div>
   </div>
@@ -809,27 +824,27 @@
   <div class="container">
     <div class="section-head">
       <div class="kicker">Three Days · Bordeaux</div>
-      <h2>三日庄园之旅 · 行程安排</h2>
+      <h2 data-en="Three Days in Bordeaux · Private Château Itinerary">三日庄园之旅 · 行程安排</h2>
       <div class="rule"></div>
     </div>
     <div class="timeline">
       <div class="day">
-        <div class="dot">壹</div>
-        <div class="tag">Day One · 抵达与迎宾</div>
-        <h3>城堡迎宾 · 庄主晚宴</h3>
-        <p>专车接驳入住百年庄园，庄主亲自迎宾。傍晚于葡萄园畔举行欢迎晚宴，开启波尔多之旅。</p>
+        <div class="dot" data-en="1">壹</div>
+        <div class="tag" data-en="Day One · Arrival &amp; Welcome">Day One · 抵达与迎宾</div>
+        <h3 data-en="Château Welcome · Estate Dinner">城堡迎宾 · 庄主晚宴</h3>
+        <p data-en="Private transfer to the château, an estate welcome, and an intimate dinner overlooking the vineyards.">专车接驳入住百年庄园，庄主亲自迎宾。傍晚于葡萄园畔举行欢迎晚宴，开启波尔多之旅。</p>
       </div>
       <div class="day">
-        <div class="dot">贰</div>
-        <div class="tag">Day Two · 庆典与盛宴</div>
-        <h3>采收开幕仪式 · 贵族骑士盛宴</h3>
-        <p>上午参与葡萄采收开幕仪式与祝酒祈福；夜晚换上礼服，出席十一世纪传承的贵族骑士盛宴。</p>
+        <div class="dot" data-en="2">贰</div>
+        <div class="tag" data-en="Day Two · Ceremony &amp; Gala">Day Two · 庆典与盛宴</div>
+        <h3 data-en="Harvest Opening · Knights’ Gala">采收开幕仪式 · 贵族骑士盛宴</h3>
+        <p data-en="Take part in the harvest opening celebration during the day, followed by a formal knights-inspired gala dinner in the evening.">上午参与葡萄采收开幕仪式与祝酒祈福；夜晚换上礼服，出席十一世纪传承的贵族骑士盛宴。</p>
       </div>
       <div class="day">
-        <div class="dot">叁</div>
-        <div class="tag">Day Three · 品鉴与告别</div>
-        <h3>名庄酒窖品鉴 · 惜别茶会</h3>
-        <p>由首席酿酒师导览酒窖，垂直品鉴珍藏年份。午后举行惜别茶会，为旅程画上圆满句点。</p>
+        <div class="dot" data-en="3">叁</div>
+        <div class="tag" data-en="Day Three · Tastings &amp; Farewell">Day Three · 品鉴与告别</div>
+        <h3 data-en="Cellar Tastings · Farewell Gathering">名庄酒窖品鉴 · 惜别茶会</h3>
+        <p data-en="Enjoy guided cellar visits and curated château tastings, followed by a relaxed farewell gathering before departure.">由首席酿酒师导览酒窖，垂直品鉴珍藏年份。午后举行惜别茶会，为旅程画上圆满句点。</p>
       </div>
     </div>
   </div>
@@ -839,28 +854,28 @@
 <section id="terroir" class="alt">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Left Bank vs Right Bank · 产区风土</div>
-      <h2>左右两岸 · 极致的风土对弈</h2>
+      <div class="kicker" data-en="Left Bank vs Right Bank">Left Bank vs Right Bank · 产区风土</div>
+      <h2 data-en="Left Bank &amp; Right Bank · A Study in Terroir">左右两岸 · 极致的风土对弈</h2>
       <div class="rule"></div>
     </div>
     <div class="terroir-grid">
       <div class="bank">
-        <div class="bk-head"><span class="bk-ic">⛰️</span><h3>左岸特质 · The Left Bank</h3></div>
-        <p>
+        <div class="bk-head"><span class="bk-ic">⛰️</span><h3 data-en="The Left Bank">左岸特质 · The Left Bank</h3></div>
+        <p data-en="Centred on the <strong>Médoc</strong> and <strong>Graves</strong>, where deep gravel soils offer exceptional drainage. This is the home of <strong>Cabernet Sauvignon</strong>, giving wines of firm tannin, bright acidity, and remarkable ageing potential, with signature notes of blackcurrant, cedar, and graphite.">
           以<strong>梅多克（Médoc）</strong>与<strong>格拉夫（Graves）</strong>为核心，底土多为第四纪砾石，排水性极佳。
           这里是<strong>赤霞珠（Cabernet Sauvignon）</strong>的绝对主场，赋予酒液强劲的单宁、高酸度与宏大的陈年潜力；
           标志性香气为黑醋栗、铅笔芯与雪松。
         </p>
-        <div class="estates">典型酒庄：Château Lafite · Château Latour · Château Margaux</div>
+        <div class="estates" data-en="Iconic estates: Château Lafite · Château Latour · Château Margaux">典型酒庄：Château Lafite · Château Latour · Château Margaux</div>
       </div>
       <div class="bank">
-        <div class="bk-head"><span class="bk-ic">🧭</span><h3>右岸风华 · The Right Bank</h3></div>
-        <p>
+        <div class="bk-head"><span class="bk-ic">🧭</span><h3 data-en="The Right Bank">右岸风华 · The Right Bank</h3></div>
+        <p data-en="Represented by <strong>Saint-Émilion</strong> and <strong>Pomerol</strong>, where limestone and clay create the ideal home for <strong>Merlot</strong>. Right Bank wines are silkier and rounder, generous and quick to charm, with lavish notes of black cherry, chocolate, and truffle.">
           以<strong>圣埃美隆（Saint-Émilion）</strong>与<strong>波美侯（Pomerol）</strong>为代表，石灰岩与粘土交织，
           赋予<strong>美乐（Merlot）</strong>完美的生长环境。右岸红酒单宁更为丝滑圆润、口感丰满、成熟迅速，
           带有浓郁的黑樱桃、巧克力与松露的奢华气息。
         </p>
-        <div class="estates">典型酒庄：Château Pétrus · Château Cheval Blanc</div>
+        <div class="estates" data-en="Iconic estates: Château Pétrus · Château Cheval Blanc">典型酒庄：Château Pétrus · Château Cheval Blanc</div>
       </div>
     </div>
   </div>
@@ -870,51 +885,51 @@
 <section id="vintage">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Vintage Guide · 核心年份</div>
-      <h2>核心年份与陈年收藏参照</h2>
+      <div class="kicker" data-en="Vintage Guide">Vintage Guide · 核心年份</div>
+      <h2 data-en="Landmark Vintages · A Reference for Cellaring">核心年份与陈年收藏参照</h2>
       <div class="rule"></div>
     </div>
-    <p class="lead" style="margin-bottom:40px">波尔多经典年份的品质、适饮与陈年潜力参照，供收藏与品鉴之用。</p>
+    <p class="lead" style="margin-bottom:40px" data-en="A reference to the quality, drinking windows, and ageing potential of classic Bordeaux vintages — for collecting and enjoyment.">波尔多经典年份的品质、适饮与陈年潜力参照，供收藏与品鉴之用。</p>
     <div class="vtable-wrap">
       <table class="vtable">
         <thead>
-          <tr><th>年份</th><th>气候特征</th><th>适饮期预测</th><th>年份定位</th></tr>
+          <tr><th data-en="Vintage">年份</th><th data-en="Character">气候特征</th><th data-en="Drinking Window">适饮期预测</th><th data-en="Vintage Standing">年份定位</th></tr>
         </thead>
         <tbody>
           <tr>
             <td>2016</td>
-            <td>史诗级旱夏，完美成熟期，左岸经典卓越</td>
+            <td data-en="An epic dry summer with ideal ripening; classic, outstanding Left Bank">史诗级旱夏，完美成熟期，左岸经典卓越</td>
             <td>2026 – 2060+</td>
-            <td><span class="vtag">传奇大年 Legendary</span></td>
+            <td><span class="vtag" data-en="Legendary">传奇大年 Legendary</span></td>
           </tr>
           <tr>
             <td>2019</td>
-            <td>炎热干燥，采收期完美，酒精度与酸度极其平衡</td>
+            <td data-en="Warm and dry with a flawless harvest; beautifully balanced alcohol and acidity">炎热干燥，采收期完美，酒精度与酸度极其平衡</td>
             <td>2028 – 2055+</td>
-            <td><span class="vtag">卓越年份 Exceptional</span></td>
+            <td><span class="vtag" data-en="Exceptional">卓越年份 Exceptional</span></td>
           </tr>
           <tr>
             <td>2020</td>
-            <td>连续第三个炎热干旱年，产量偏低，风味极度浓郁</td>
+            <td data-en="A third consecutive hot, dry year; lower yields and intensely concentrated flavours">连续第三个炎热干旱年，产量偏低，风味极度浓郁</td>
             <td>2030 – 2055+</td>
-            <td><span class="vtag">经典高分 Great</span></td>
+            <td><span class="vtag" data-en="Great">经典高分 Great</span></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="wine-note">年份评述综合业界公开资料整理，仅供收藏与品鉴参考；具体酒款年份与库存以正式确认文件为准。</p>
+    <p class="wine-note" data-en="Vintage notes are summarized from publicly available trade sources, for reference in collecting and tasting only. Specific vintages and inventory are subject to formal confirmation.">年份评述综合业界公开资料整理，仅供收藏与品鉴参考；具体酒款年份与库存以正式确认文件为准。</p>
   </div>
 </section>
 
 <!-- EN PRIMEUR & CELLAR -->
 <section id="cellar" class="alt">
   <div class="container" style="max-width:820px;text-align:center">
-    <div class="cellar-eyebrow">✦ En Primeur &amp; Cellar · 期酒与窖藏</div>
+    <div class="cellar-eyebrow" data-en="✦ En Primeur &amp; Cellar">✦ En Primeur &amp; Cellar · 期酒与窖藏</div>
     <div class="section-head" style="margin-bottom:26px">
-      <h2>大师级瓶型与窖藏之道</h2>
+      <h2 data-en="The Art of Format &amp; Cellaring">大师级瓶型与窖藏之道</h2>
       <div class="rule"></div>
     </div>
-    <p class="lead" style="margin-top:0">
+    <p class="lead" style="margin-top:0" data-en="For the finest Bordeaux, the <strong>Magnum (1.5L)</strong> ages more gracefully than the standard 750ml bottle, making it a natural choice for cellaring and wines meant to be passed on. When acquiring en primeur, thoughtfully balancing format and vintage is key to building depth and character in a personal cellar.">
       对于顶级波尔多而言，<strong>Magnum（1.5 升大瓶装）</strong>的抗氧化与陈年能力显著优于标准瓶（750ml），
       是酒窖珍藏与传世佳酿的理想之选。在期酒（En Primeur）配置阶段，合理调配瓶型与年份，
       是构建个人酒窖深度与收藏格局的关键之笔。
@@ -926,11 +941,11 @@
 <section id="wines" class="alt">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Château Selection · 名庄甄选</div>
-      <h2>会员尊享酒单</h2>
+      <div class="kicker" data-en="Château Selection">Château Selection · 名庄甄选</div>
+      <h2 data-en="Member Wine Selection">会员尊享酒单</h2>
       <div class="rule"></div>
     </div>
-    <p class="wine-intro">
+    <p class="wine-intro" data-en="Vignes du Soleil works closely with selected Bordeaux estates and producers to offer members curated access to wines suitable for daily enjoyment, gifting, private dinners, and collecting. Availability, vintages, pricing, and allocations are subject to confirmation by the concierge team.">
       皇旭庄园 <strong>Vignes du Soleil</strong> 深耕波尔多，年出口红酒约 80 万瓶，与法国葡萄酒酿造商联合会
       （Fédération des Vignerons Français）及上百家名庄保持稳定合作，亦为瑰宝酒庄最大股东。
       董事长 Aurore JI 荣获法国波尔多骑士勋章。以下为本年度会员甄选酒款，自庄园直采、限量供应。
@@ -939,50 +954,50 @@
     <!-- 按场景选酒 -->
     <div class="scene-pick">
       <div class="sp-head">
-        <h3>不知道选哪款？按场景选择</h3>
-        <p>Not sure which to choose? Pick by occasion</p>
+        <h3 data-en="Not sure which to choose? Pick by occasion">不知道选哪款？按场景选择</h3>
+        <p data-en="">Not sure which to choose? Pick by occasion</p>
       </div>
       <div class="scene-grid">
         <div class="scene">
           <div class="ico">🍽️</div>
           <div>
-            <div class="sc-name">日常晚餐</div>
+            <div class="sc-name" data-en="Everyday Dining">日常晚餐</div>
             <div class="sc-wines">Castillon · Puisseguin Saint-Émilion · Moulin de Bel Air</div>
           </div>
         </div>
         <div class="scene">
           <div class="ico">🥂</div>
           <div>
-            <div class="sc-name">朋友聚会</div>
-            <div class="sc-wines">桃红 Rosé · Castillon · Médoc 中级庄</div>
+            <div class="sc-name" data-en="With Friends">朋友聚会</div>
+            <div class="sc-wines" data-en="Rosé · Castillon · Médoc Cru Bourgeois">桃红 Rosé · Castillon · Médoc 中级庄</div>
           </div>
         </div>
         <div class="scene">
           <div class="ico">🎁</div>
           <div>
-            <div class="sc-name">商务送礼</div>
+            <div class="sc-name" data-en="Business Gifting">商务送礼</div>
             <div class="sc-wines">Cerro Gordo · In Aeternum · Révélation</div>
           </div>
         </div>
         <div class="scene">
           <div class="ico">🍷</div>
           <div>
-            <div class="sc-name">高端宴请</div>
+            <div class="sc-name" data-en="Fine Dining">高端宴请</div>
             <div class="sc-wines">Château Dassault 2019 · Les Tuileries · Révélation</div>
           </div>
         </div>
         <div class="scene">
           <div class="ico">💎</div>
           <div>
-            <div class="sc-name">收藏限量</div>
-            <div class="sc-wines">EPHATA · L'Intégrale · 小维多 Princesse Lola</div>
+            <div class="sc-name" data-en="Collector’s Reserve">收藏限量</div>
+            <div class="sc-wines" data-en="EPHATA · L'Intégrale · Petit Verdot Princesse Lola">EPHATA · L'Intégrale · 小维多 Princesse Lola</div>
           </div>
         </div>
         <div class="scene">
           <div class="ico">🌸</div>
           <div>
-            <div class="sc-name">女性朋友喜欢</div>
-            <div class="sc-wines">桃红 Rosé · 柔顺梅洛 · 圣埃美隆卫星产区</div>
+            <div class="sc-name" data-en="A Softer Style">女性朋友喜欢</div>
+            <div class="sc-wines" data-en="Rosé · Supple Merlot · Saint-Émilion satellites">桃红 Rosé · 柔顺梅洛 · 圣埃美隆卫星产区</div>
           </div>
         </div>
       </div>
@@ -994,17 +1009,17 @@
       <div class="wine">
         <div class="wpic"><img src="images/wines/castillon.png" alt="瑰宝酒庄 卡斯蒂永干红 酒瓶" loading="lazy"></div>
         <div class="whead">
-          <div class="region">Castillon · 波尔多</div>
-          <div class="wname">瑰宝酒庄 · 卡斯蒂永干红</div>
+          <div class="region" data-en="Castillon · Bordeaux">Castillon · 波尔多</div>
+          <div class="wname" data-en="Château Guibeau · Castillon">瑰宝酒庄 · 卡斯蒂永干红</div>
           <div class="fr">Château Guibeau · Castillon Côtes de Bordeaux</div>
-          <div class="suit"><span class="lbl">适合</span>入门日常款</div>
+          <div class="suit" data-en="<span class=&quot;lbl&quot;>Best for</span>Everyday Table"><span class="lbl">适合</span>入门日常款</div>
         </div>
         <div class="wbody">
-          <div class="row"><b>风味</b><span>果香明快、平易近人，日常佐餐的入门之选。</span></div>
+          <div class="row" data-en="<b>Tasting Notes</b><span>Bright, fruit-forward and approachable — an easy choice for the everyday table.</span>"><b>风味</b><span>果香明快、平易近人，日常佐餐的入门之选。</span></div>
         </div>
         <div class="wfoot">
-          <div class="price">$34<small>/瓶</small></div>
-          <div class="case">$204 / 6 支整箱</div>
+          <div class="price">$34<small data-en="/bottle">/瓶</small></div>
+          <div class="case" data-en="$204 / case of 6">$204 / 6 支整箱</div>
         </div>
       </div>
 
@@ -1013,16 +1028,16 @@
         <div class="wpic"><img src="images/wines/puisseguin.png" alt="瑰宝酒庄 普涩港圣埃美隆 酒瓶" loading="lazy"></div>
         <div class="whead">
           <div class="region">Puisseguin Saint-Émilion</div>
-          <div class="wname">瑰宝酒庄 · 普涩港圣埃美隆</div>
+          <div class="wname" data-en="Château Guibeau · Puisseguin">瑰宝酒庄 · 普涩港圣埃美隆</div>
           <div class="fr">Château Guibeau · Puisseguin Saint-Émilion</div>
-          <div class="suit"><span class="lbl">适合</span>入门日常款</div>
+          <div class="suit" data-en="<span class=&quot;lbl&quot;>Best for</span>Everyday Table"><span class="lbl">适合</span>入门日常款</div>
         </div>
         <div class="wbody">
-          <div class="row"><b>风味</b><span>圣埃美隆卫星产区，结构温润，性价比之选。</span></div>
+          <div class="row" data-en="<b>Tasting Notes</b><span>From a Saint-Émilion satellite appellation — gently structured and excellent value.</span>"><b>风味</b><span>圣埃美隆卫星产区，结构温润，性价比之选。</span></div>
         </div>
         <div class="wfoot">
-          <div class="price">$38<small>/瓶</small></div>
-          <div class="case">$228 / 6 支整箱</div>
+          <div class="price">$38<small data-en="/bottle">/瓶</small></div>
+          <div class="case" data-en="$228 / case of 6">$228 / 6 支整箱</div>
         </div>
       </div>
 
@@ -1031,19 +1046,19 @@
         <div class="wpic"><img src="images/wines/cerrogordo.png" alt="瑰宝酒庄 佳酿 枫之语 Cerro Gordo 酒瓶" loading="lazy"></div>
         <div class="whead">
           <div class="region">Puisseguin Saint-Émilion</div>
-          <div class="wname">瑰宝酒庄 · 佳酿「枫之语」2020</div>
+          <div class="wname" data-en="Cerro Gordo 2020">瑰宝酒庄 · 佳酿「枫之语」2020</div>
           <div class="fr">Château Guibeau la Fourvieille · Cerro Gordo</div>
-          <div class="suit"><span class="lbl">适合</span>晚宴送礼款</div>
+          <div class="suit" data-en="<span class=&quot;lbl&quot;>Best for</span>Dinner &amp; Gifting"><span class="lbl">适合</span>晚宴送礼款</div>
         </div>
         <div class="wbody">
-          <div class="row"><b>品种</b><span>80% 梅洛 · 20% 品丽珠</span></div>
-          <div class="row"><b>酿造</b><span>手工采摘，不锈钢温控发酵，法国橡木桶陈酿</span></div>
-          <div class="row"><b>风味</b><span>浓郁红果与黑果交织香料气息，酒体丰满，单宁富层次。</span></div>
-          <span class="score">Yves Beck 91–93 分</span>
+          <div class="row" data-en="<b>Varietals</b><span>80% Merlot · 20% Cabernet Franc</span>"><b>品种</b><span>80% 梅洛 · 20% 品丽珠</span></div>
+          <div class="row" data-en="<b>Winemaking</b><span>Hand-harvested, temperature-controlled steel fermentation, aged in French oak</span>"><b>酿造</b><span>手工采摘，不锈钢温控发酵，法国橡木桶陈酿</span></div>
+          <div class="row" data-en="<b>Tasting Notes</b><span>Concentrated red and black fruit laced with spice; full-bodied with layered tannins.</span>"><b>风味</b><span>浓郁红果与黑果交织香料气息，酒体丰满，单宁富层次。</span></div>
+          <span class="score" data-en="Yves Beck 91–93 pts">Yves Beck 91–93 分</span>
         </div>
         <div class="wfoot">
-          <div class="price">$90<small>/瓶</small></div>
-          <div class="case">$540 / 6 支整箱</div>
+          <div class="price">$90<small data-en="/bottle">/瓶</small></div>
+          <div class="case" data-en="$540 / case of 6">$540 / 6 支整箱</div>
         </div>
       </div>
 
@@ -1051,19 +1066,19 @@
       <div class="wine">
         <div class="wpic"><img src="images/wines/rose.png" alt="瑰宝酒庄 桃红 Rosé 酒瓶" loading="lazy"></div>
         <div class="whead">
-          <div class="region">Puisseguin Saint-Émilion · 桃红</div>
-          <div class="wname">瑰宝酒庄 · 桃红 2021</div>
+          <div class="region" data-en="Puisseguin Saint-Émilion · Rosé">Puisseguin Saint-Émilion · 桃红</div>
+          <div class="wname" data-en="Rosé 2021">瑰宝酒庄 · 桃红 2021</div>
           <div class="fr">Château Guibeau la Fourvieille · Rosé</div>
-          <div class="suit"><span class="lbl">适合</span>女士喜爱的柔顺款</div>
+          <div class="suit" data-en="<span class=&quot;lbl&quot;>Best for</span>A Softer Style"><span class="lbl">适合</span>女士喜爱的柔顺款</div>
         </div>
         <div class="wbody">
-          <div class="row"><b>品种</b><span>100% 梅洛 · 老藤均龄 55 年</span></div>
-          <div class="row"><b>酿造</b><span>手工采摘，法国新橡木桶陈酿 24 个月</span></div>
-          <div class="row"><b>风味</b><span>清新雅致的桃红，果香细腻，限量小批量酿造。</span></div>
+          <div class="row" data-en="<b>Varietals</b><span>100% Merlot · old vines, avg. 55 years</span>"><b>品种</b><span>100% 梅洛 · 老藤均龄 55 年</span></div>
+          <div class="row" data-en="<b>Winemaking</b><span>Hand-harvested, aged 24 months in new French oak</span>"><b>酿造</b><span>手工采摘，法国新橡木桶陈酿 24 个月</span></div>
+          <div class="row" data-en="<b>Tasting Notes</b><span>A fresh, refined rosé with delicate fruit — a small, limited production.</span>"><b>风味</b><span>清新雅致的桃红，果香细腻，限量小批量酿造。</span></div>
         </div>
         <div class="wfoot">
-          <div class="price" style="font-size:18px">限量珍藏</div>
-          <div class="case">仅产 1,500 瓶 · 会员询价</div>
+          <div class="price" style="font-size:18px" data-en="Limited Reserve">限量珍藏</div>
+          <div class="case" data-en="Only 1,500 bottles · Member inquiry">仅产 1,500 瓶 · 会员询价</div>
         </div>
       </div>
 
@@ -1071,19 +1086,19 @@
       <div class="wine">
         <div class="wpic"><img src="images/wines/ephata.png" alt="贵宝酒庄 EPHATA 酒瓶" loading="lazy"></div>
         <div class="whead">
-          <div class="region">车库酒 · Garage Wine</div>
-          <div class="wname">贵宝酒庄 · EPHATA 2017</div>
+          <div class="region" data-en="Garage Wine">车库酒 · Garage Wine</div>
+          <div class="wname" data-en="Guibot · EPHATA 2017">贵宝酒庄 · EPHATA 2017</div>
           <div class="fr">Château Guibot La Fourvieille · EPHATA</div>
-          <div class="suit"><span class="lbl">适合</span>收藏限量款</div>
+          <div class="suit" data-en="<span class=&quot;lbl&quot;>Best for</span>Collector’s Reserve"><span class="lbl">适合</span>收藏限量款</div>
         </div>
         <div class="wbody">
-          <div class="row"><b>品种</b><span>100% 品丽珠 · 百年老藤（树龄 100 年+）</span></div>
-          <div class="row"><b>酿造</b><span>500 升木桶浸渍 3–4 周，年产仅 6,000 瓶</span></div>
-          <div class="row"><b>风味</b><span>「EPHATA」阿拉姆语意为「敞开自己」；单宁柔滑，安静而优雅。</span></div>
+          <div class="row" data-en="<b>Varietals</b><span>100% Cabernet Franc · centenarian vines (100+ years)</span>"><b>品种</b><span>100% 品丽珠 · 百年老藤（树龄 100 年+）</span></div>
+          <div class="row" data-en="<b>Winemaking</b><span>Macerated 3–4 weeks in 500L barrels; only 6,000 bottles produced</span>"><b>酿造</b><span>500 升木桶浸渍 3–4 周，年产仅 6,000 瓶</span></div>
+          <div class="row" data-en="<b>Tasting Notes</b><span>“EPHATA” means “open yourself” in Aramaic; silky tannins, quiet and elegant.</span>"><b>风味</b><span>「EPHATA」阿拉姆语意为「敞开自己」；单宁柔滑，安静而优雅。</span></div>
         </div>
         <div class="wfoot">
-          <div class="price">$132<small>/瓶</small></div>
-          <div class="case">$792 / 6 支整箱</div>
+          <div class="price">$132<small data-en="/bottle">/瓶</small></div>
+          <div class="case" data-en="$792 / case of 6">$792 / 6 支整箱</div>
         </div>
       </div>
 
@@ -1092,18 +1107,18 @@
         <div class="wpic"><img src="images/wines/inaeternum.jpg" alt="拉雷庄园 永恒 In Aeternum 酒瓶" loading="lazy"></div>
         <div class="whead">
           <div class="region">Médoc · Montravel</div>
-          <div class="wname">拉雷庄园 · 永恒 2021</div>
+          <div class="wname" data-en="Château La Raye · In Aeternum 2021">拉雷庄园 · 永恒 2021</div>
           <div class="fr">Château La Raye · In Aeternum</div>
-          <div class="suit"><span class="lbl">适合</span>晚宴送礼款</div>
+          <div class="suit" data-en="<span class=&quot;lbl&quot;>Best for</span>Dinner &amp; Gifting"><span class="lbl">适合</span>晚宴送礼款</div>
         </div>
         <div class="wbody">
-          <div class="row"><b>品种</b><span>50% 梅洛 · 40% 品丽珠 · 10% 赤霞珠</span></div>
-          <div class="row"><b>酿造</b><span>高密度 7,700 株/公顷，新橡木桶陈酿 15 个月，年产 10,000 瓶</span></div>
-          <div class="row"><b>风味</b><span>精致优雅，余味悠长柔滑，平衡而不张扬。</span></div>
+          <div class="row" data-en="<b>Varietals</b><span>50% Merlot · 40% Cabernet Franc · 10% Cabernet Sauvignon</span>"><b>品种</b><span>50% 梅洛 · 40% 品丽珠 · 10% 赤霞珠</span></div>
+          <div class="row" data-en="<b>Winemaking</b><span>High density 7,700 vines/ha, aged 15 months in new oak; 10,000 bottles</span>"><b>酿造</b><span>高密度 7,700 株/公顷，新橡木桶陈酿 15 个月，年产 10,000 瓶</span></div>
+          <div class="row" data-en="<b>Tasting Notes</b><span>Refined and elegant, with a long, silky finish — balanced and understated.</span>"><b>风味</b><span>精致优雅，余味悠长柔滑，平衡而不张扬。</span></div>
         </div>
         <div class="wfoot">
-          <div class="price">$69<small>/瓶</small></div>
-          <div class="case">$414 / 6 支整箱</div>
+          <div class="price">$69<small data-en="/bottle">/瓶</small></div>
+          <div class="case" data-en="$414 / case of 6">$414 / 6 支整箱</div>
         </div>
       </div>
 
@@ -1111,19 +1126,19 @@
       <div class="wine">
         <div class="wpic"><img src="images/wines/moulin.png" alt="红磨坊庄园 Moulin de Bel Air 酒瓶" loading="lazy"></div>
         <div class="whead">
-          <div class="region">Médoc · 中级庄 Cru Bourgeois</div>
-          <div class="wname">红磨坊庄园 2016</div>
+          <div class="region" data-en="Médoc · Cru Bourgeois">Médoc · 中级庄 Cru Bourgeois</div>
+          <div class="wname" data-en="Château Moulin de Bel Air 2016">红磨坊庄园 2016</div>
           <div class="fr">Château Moulin de Bel Air</div>
-          <div class="suit"><span class="lbl">适合</span>入门日常款</div>
+          <div class="suit" data-en="<span class=&quot;lbl&quot;>Best for</span>Everyday Table"><span class="lbl">适合</span>入门日常款</div>
         </div>
         <div class="wbody">
-          <div class="row"><b>品种</b><span>80% 梅洛 · 20% 赤霞珠 · 树龄 35 年</span></div>
-          <div class="row"><b>酿造</b><span>冷预发酵后传统酿造，年产 3–5 万瓶</span></div>
-          <div class="row"><b>风味</b><span>红醋栗与李子，柔顺易饮的梅多克中级庄日常之选。</span></div>
+          <div class="row" data-en="<b>Varietals</b><span>80% Merlot · 20% Cabernet Sauvignon · 35-year-old vines</span>"><b>品种</b><span>80% 梅洛 · 20% 赤霞珠 · 树龄 35 年</span></div>
+          <div class="row" data-en="<b>Winemaking</b><span>Cold pre-fermentation then traditional vinification; 30,000–50,000 bottles</span>"><b>酿造</b><span>冷预发酵后传统酿造，年产 3–5 万瓶</span></div>
+          <div class="row" data-en="<b>Tasting Notes</b><span>Redcurrant and plum — a supple, easy-drinking Médoc Cru Bourgeois for every day.</span>"><b>风味</b><span>红醋栗与李子，柔顺易饮的梅多克中级庄日常之选。</span></div>
         </div>
         <div class="wfoot">
-          <div class="price">$48<small>/瓶</small></div>
-          <div class="case">$288 / 6 支整箱</div>
+          <div class="price">$48<small data-en="/bottle">/瓶</small></div>
+          <div class="case" data-en="$288 / case of 6">$288 / 6 支整箱</div>
         </div>
       </div>
 
@@ -1131,20 +1146,20 @@
       <div class="wine">
         <div class="wpic"><img src="images/wines/tuileries.png" alt="壮志凌云 Les Tuileries 干红 酒瓶" loading="lazy"></div>
         <div class="whead">
-          <div class="region">Médoc · 中级庄 Cru Bourgeois</div>
-          <div class="wname">壮志凌云 · 干红 2017</div>
+          <div class="region" data-en="Médoc · Cru Bourgeois">Médoc · 中级庄 Cru Bourgeois</div>
+          <div class="wname" data-en="Château Les Tuileries 2017">壮志凌云 · 干红 2017</div>
           <div class="fr">Château Les Tuileries · Médoc</div>
-          <div class="suit"><span class="lbl">适合</span>高端宴请款</div>
+          <div class="suit" data-en="<span class=&quot;lbl&quot;>Best for</span>Fine Dining"><span class="lbl">适合</span>高端宴请款</div>
         </div>
         <div class="wbody">
-          <div class="row"><b>品种</b><span>50% 赤霞珠 · 50% 梅洛 · 树龄 60 年</span></div>
-          <div class="row"><b>酿造</b><span>新橡木桶发酵，法国橡木桶陈酿 12 个月</span></div>
-          <div class="row"><b>风味</b><span>成熟黑莓、淡雅花香与一缕石墨；结构优美，余味悠长。</span></div>
-          <span class="score">95 分 · Robert Parker《波尔多》推荐酒商</span>
+          <div class="row" data-en="<b>Varietals</b><span>50% Cabernet Sauvignon · 50% Merlot · 60-year-old vines</span>"><b>品种</b><span>50% 赤霞珠 · 50% 梅洛 · 树龄 60 年</span></div>
+          <div class="row" data-en="<b>Winemaking</b><span>Fermented and aged 12 months in French oak</span>"><b>酿造</b><span>新橡木桶发酵，法国橡木桶陈酿 12 个月</span></div>
+          <div class="row" data-en="<b>Tasting Notes</b><span>Ripe blackberry, delicate florals and a hint of graphite; beautifully structured with a long finish.</span>"><b>风味</b><span>成熟黑莓、淡雅花香与一缕石墨；结构优美，余味悠长。</span></div>
+          <span class="score" data-en="95 pts · Recommended in Robert Parker’s Bordeaux">95 分 · Robert Parker《波尔多》推荐酒商</span>
         </div>
         <div class="wfoot">
-          <div class="price">$60<small>/瓶</small></div>
-          <div class="case">$360 / 6 支整箱</div>
+          <div class="price">$60<small data-en="/bottle">/瓶</small></div>
+          <div class="case" data-en="$360 / case of 6">$360 / 6 支整箱</div>
         </div>
       </div>
 
@@ -1152,19 +1167,19 @@
       <div class="wine">
         <div class="wpic"><img src="images/wines/revelation.png" alt="壮志凌云 至尊干红 Révélation 酒瓶" loading="lazy"></div>
         <div class="whead">
-          <div class="region">Médoc · 车库酒 Garage Wine</div>
-          <div class="wname">壮志凌云 · 至尊干红 2017</div>
+          <div class="region" data-en="Médoc · Garage Wine">Médoc · 车库酒 Garage Wine</div>
+          <div class="wname" data-en="Révélation des Tuileries 2017">壮志凌云 · 至尊干红 2017</div>
           <div class="fr">Révélation Château du Les Tuileries</div>
-          <div class="suit"><span class="lbl">适合</span>高端宴请款</div>
+          <div class="suit" data-en="<span class=&quot;lbl&quot;>Best for</span>Fine Dining"><span class="lbl">适合</span>高端宴请款</div>
         </div>
         <div class="wbody">
-          <div class="row"><b>品种</b><span>50% 赤霞珠 · 50% 梅洛 · 树龄 65 年</span></div>
-          <div class="row"><b>酿造</b><span>新橡木桶陈酿 24 个月，仅大年份产出，年产约 1 万瓶</span></div>
-          <div class="row"><b>风味</b><span>黑加仑、黑樱桃与香料，口感精致，单宁顺滑，中等酒体。</span></div>
+          <div class="row" data-en="<b>Varietals</b><span>50% Cabernet Sauvignon · 50% Merlot · 65-year-old vines</span>"><b>品种</b><span>50% 赤霞珠 · 50% 梅洛 · 树龄 65 年</span></div>
+          <div class="row" data-en="<b>Winemaking</b><span>Aged 24 months in new oak, produced only in great vintages; approx. 10,000 bottles</span>"><b>酿造</b><span>新橡木桶陈酿 24 个月，仅大年份产出，年产约 1 万瓶</span></div>
+          <div class="row" data-en="<b>Tasting Notes</b><span>Blackcurrant, black cherry and spice; refined, with smooth tannins and a medium body.</span>"><b>风味</b><span>黑加仑、黑樱桃与香料，口感精致，单宁顺滑，中等酒体。</span></div>
         </div>
         <div class="wfoot">
-          <div class="price">$102<small>/瓶</small></div>
-          <div class="case">$612 / 6 支整箱</div>
+          <div class="price">$102<small data-en="/bottle">/瓶</small></div>
+          <div class="case" data-en="$612 / case of 6">$612 / 6 支整箱</div>
         </div>
       </div>
 
@@ -1172,20 +1187,20 @@
       <div class="wine">
         <div class="wpic"><img src="images/wines/integrale.png" alt="壮志凌云 一切皆有可能 L'Intégrale 酒瓶" loading="lazy"></div>
         <div class="whead">
-          <div class="region">Médoc · 车库酒 Garage Wine</div>
-          <div class="wname">壮志凌云 ·「一切皆有可能」</div>
+          <div class="region" data-en="Médoc · Garage Wine">Médoc · 车库酒 Garage Wine</div>
+          <div class="wname" data-en="L'Intégrale des Tuileries">壮志凌云 ·「一切皆有可能」</div>
           <div class="fr">L'Intégrale des Tuileries · 2018–2019</div>
-          <div class="suit"><span class="lbl">适合</span>收藏限量款</div>
+          <div class="suit" data-en="<span class=&quot;lbl&quot;>Best for</span>Collector’s Reserve"><span class="lbl">适合</span>收藏限量款</div>
         </div>
         <div class="wbody">
-          <div class="row"><b>品种</b><span>⅓ 赤霞珠 · ⅓ 梅洛 · ⅓ 小维多</span></div>
-          <div class="row"><b>酿造</b><span>整桶发酵，每日 6–8 轮循环；陈酿 24 个月（桶中共三年），年产仅 750 瓶</span></div>
-          <div class="row"><b>规格</b><span>750ml 古董酒瓶 · 3 支木箱</span></div>
-          <span class="score">99 分 · 顶级珍藏年份</span>
+          <div class="row" data-en="<b>Varietals</b><span>⅓ Cabernet Sauvignon · ⅓ Merlot · ⅓ Petit Verdot</span>"><b>品种</b><span>⅓ 赤霞珠 · ⅓ 梅洛 · ⅓ 小维多</span></div>
+          <div class="row" data-en="<b>Winemaking</b><span>Whole-barrel fermentation, 6–8 rotations daily; aged 24 months (three years in barrel); only 750 bottles</span>"><b>酿造</b><span>整桶发酵，每日 6–8 轮循环；陈酿 24 个月（桶中共三年），年产仅 750 瓶</span></div>
+          <div class="row" data-en="<b>Format</b><span>750ml antique bottle · wooden case of 3</span>"><b>规格</b><span>750ml 古董酒瓶 · 3 支木箱</span></div>
+          <span class="score" data-en="99 pts · A top collector vintage">99 分 · 顶级珍藏年份</span>
         </div>
         <div class="wfoot">
-          <div class="price">$240<small>/瓶</small></div>
-          <div class="case">$720 / 3 支木箱</div>
+          <div class="price">$240<small data-en="/bottle">/瓶</small></div>
+          <div class="case" data-en="$720 / wooden case of 3">$720 / 3 支木箱</div>
         </div>
       </div>
 
@@ -1193,18 +1208,18 @@
       <div class="wine">
         <div class="wpic"><img src="images/wines/petitverdot.png" alt="小维多 Princesse Lola 特酿 木箱" loading="lazy"></div>
         <div class="whead">
-          <div class="region">Médoc · 限量珍藏</div>
-          <div class="wname">小维多 ·「Princesse Lola」特酿</div>
+          <div class="region" data-en="Médoc · Limited Reserve">Médoc · 限量珍藏</div>
+          <div class="wname" data-en="Cuvée Princesse Lola">小维多 ·「Princesse Lola」特酿</div>
           <div class="fr">Petit Verdot des Tuileries · Cuvée Princesse Lola</div>
-          <div class="suit"><span class="lbl">适合</span>收藏限量款</div>
+          <div class="suit" data-en="<span class=&quot;lbl&quot;>Best for</span>Collector’s Reserve"><span class="lbl">适合</span>收藏限量款</div>
         </div>
         <div class="wbody">
-          <div class="row"><b>品种</b><span>小维多单一品种特酿</span></div>
-          <div class="row"><b>风味</b><span>深邃浓郁、结构强劲，骨架紧致的稀有限量珍藏。</span></div>
+          <div class="row" data-en="<b>Varietals</b><span>Single-varietal Petit Verdot cuvée</span>"><b>品种</b><span>小维多单一品种特酿</span></div>
+          <div class="row" data-en="<b>Tasting Notes</b><span>Deep and concentrated with a powerful, tightly-knit frame — a rare, limited reserve.</span>"><b>风味</b><span>深邃浓郁、结构强劲，骨架紧致的稀有限量珍藏。</span></div>
         </div>
         <div class="wfoot">
-          <div class="price">$220<small>/瓶</small></div>
-          <div class="case">$1,320 / 6 支整箱</div>
+          <div class="price">$220<small data-en="/bottle">/瓶</small></div>
+          <div class="case" data-en="$1,320 / case of 6">$1,320 / 6 支整箱</div>
         </div>
       </div>
 
@@ -1212,26 +1227,26 @@
       <div class="wine">
         <div class="wpic"><img src="images/wines/dassault.png" alt="达索酒庄 Château Dassault 列级庄 酒瓶" loading="lazy"></div>
         <div class="whead">
-          <div class="region">Saint-Émilion · 列级庄 Grand Cru Classé</div>
-          <div class="wname">达索酒庄 2019</div>
+          <div class="region" data-en="Saint-Émilion · Grand Cru Classé">Saint-Émilion · 列级庄 Grand Cru Classé</div>
+          <div class="wname" data-en="Château Dassault 2019">达索酒庄 2019</div>
           <div class="fr">Château Dassault · Grand Cru Classé</div>
-          <div class="suit"><span class="lbl">适合</span>高端宴请款</div>
+          <div class="suit" data-en="<span class=&quot;lbl&quot;>Best for</span>Fine Dining"><span class="lbl">适合</span>高端宴请款</div>
         </div>
         <div class="wbody">
-          <div class="row"><b>品种</b><span>75% 梅洛 · 22% 品丽珠 · 3% 赤霞珠</span></div>
-          <div class="row"><b>酿造</b><span>70% 新桶 / 30% 一年旧桶，陈酿 14–18 个月；1969 年晋升列级庄</span></div>
-          <div class="row"><b>风味</b><span>黑樱桃、可可、香料与皮革雪茄盒气息，平衡优雅，余味绵长。</span></div>
+          <div class="row" data-en="<b>Varietals</b><span>75% Merlot · 22% Cabernet Franc · 3% Cabernet Sauvignon</span>"><b>品种</b><span>75% 梅洛 · 22% 品丽珠 · 3% 赤霞珠</span></div>
+          <div class="row" data-en="<b>Winemaking</b><span>70% new / 30% one-year barrels, aged 14–18 months; elevated to Grand Cru Classé in 1969</span>"><b>酿造</b><span>70% 新桶 / 30% 一年旧桶，陈酿 14–18 个月；1969 年晋升列级庄</span></div>
+          <div class="row" data-en="<b>Tasting Notes</b><span>Black cherry, cocoa, spice and cigar-box leather; balanced and elegant, with a long finish.</span>"><b>风味</b><span>黑樱桃、可可、香料与皮革雪茄盒气息，平衡优雅，余味绵长。</span></div>
           <span class="score">Galloni 93 · Suckling 93 · Anson 94 · Beck 93</span>
         </div>
         <div class="wfoot">
-          <div class="price">$158<small>/瓶</small></div>
-          <div class="case">$948 / 6 支整箱</div>
+          <div class="price">$158<small data-en="/bottle">/瓶</small></div>
+          <div class="case" data-en="$948 / case of 6">$948 / 6 支整箱</div>
         </div>
       </div>
 
     </div>
 
-    <p class="wine-note">
+    <p class="wine-note" data-en="Prices shown are member reference prices (USD), sold by the case. Vintages, formats, and inventory are subject to concierge confirmation.<br>Members enjoy château-direct pricing and priority allocation — please leave your details in the form below.">
       以上为会员甄选参考价（美元），整箱起售；年份、规格与库存以礼宾顾问确认为准。<br>
       会员尊享庄园直采价与优先配额，详情请于下方「立即报名」留下信息。
     </p>
@@ -1243,36 +1258,36 @@
   <div class="container">
     <div class="section-head">
       <div class="kicker">Why Vignes du Soleil</div>
-      <h2>为什么选择 Vignes du Soleil</h2>
+      <h2 data-en="Why Choose Vignes du Soleil">为什么选择 Vignes du Soleil</h2>
       <div class="rule"></div>
     </div>
     <div class="why-grid">
       <div class="why-item">
         <div class="wi-ic">🏰</div>
-        <div><div class="wi-t">波尔多庄园资源</div><div class="wi-d">深耕波尔多多年，与上百家名庄及法国葡萄酒酿造商联合会建立稳定合作。</div></div>
+        <div><div class="wi-t" data-en="Bordeaux Estate Access">波尔多庄园资源</div><div class="wi-d" data-en="Years of presence in Bordeaux, with lasting relationships across leading estates and the French winemakers’ federation.">深耕波尔多多年，与上百家名庄及法国葡萄酒酿造商联合会建立稳定合作。</div></div>
       </div>
       <div class="why-item">
         <div class="wi-ic">🍷</div>
-        <div><div class="wi-t">名庄直采 · 会员优先配额</div><div class="wi-d">自庄园一站式直采，会员享庄园直采价与稀缺年份的优先配额。</div></div>
+        <div><div class="wi-t" data-en="Château-Direct · Priority Allocation">名庄直采 · 会员优先配额</div><div class="wi-d" data-en="One-stop château-direct sourcing, with member pricing and priority allocation on scarce vintages.">自庄园一站式直采，会员享庄园直采价与稀缺年份的优先配额。</div></div>
       </div>
       <div class="why-item">
         <div class="wi-ic">🥂</div>
-        <div><div class="wi-t">洛杉矶本地品鉴与服务</div><div class="wi-d">于洛杉矶定期举办会员品鉴沙龙与社交活动，本地团队全程对接。</div></div>
+        <div><div class="wi-t" data-en="Los Angeles Tastings &amp; Service">洛杉矶本地品鉴与服务</div><div class="wi-d" data-en="Regular member tasting salons and social events in Los Angeles, with a local team on hand throughout.">于洛杉矶定期举办会员品鉴沙龙与社交活动，本地团队全程对接。</div></div>
       </div>
       <div class="why-item">
         <div class="wi-ic">⚜️</div>
-        <div><div class="wi-t">法国庄园与圣埃美隆文化体验</div><div class="wi-d">亲赴法国，体验圣埃美隆骑士庆典、百年庄园接待与深度风土之旅。</div></div>
+        <div><div class="wi-t" data-en="French Château &amp; Saint-Émilion Culture">法国庄园与圣埃美隆文化体验</div><div class="wi-d" data-en="Travel to France for the Saint-Émilion ceremonies, private château hospitality, and an in-depth journey through the terroir.">亲赴法国，体验圣埃美隆骑士庆典、百年庄园接待与深度风土之旅。</div></div>
       </div>
       <div class="why-item">
         <div class="wi-ic">🤝</div>
-        <div><div class="wi-t">私人礼宾顾问对接</div><div class="wi-d">专属礼宾顾问一对一服务，从酒款选购到行程安排全程协助。</div></div>
+        <div><div class="wi-t" data-en="Private Concierge Advisor">私人礼宾顾问对接</div><div class="wi-d" data-en="A dedicated concierge advisor supports you one-to-one, from wine selection to itinerary planning.">专属礼宾顾问一对一服务，从酒款选购到行程安排全程协助。</div></div>
       </div>
       <div class="why-item">
         <div class="wi-ic">🌐</div>
-        <div><div class="wi-t">中英文沟通服务</div><div class="wi-d">中英双语沟通，无论身处北美或往返中法，均可顺畅对接。</div></div>
+        <div><div class="wi-t" data-en="Chinese &amp; English Service">中英文沟通服务</div><div class="wi-d" data-en="Bilingual communication in Chinese and English, whether you are in North America or travelling between China and France.">中英双语沟通，无论身处北美或往返中法，均可顺畅对接。</div></div>
       </div>
     </div>
-    <p class="why-note">活动、酒款、价格、库存及付款条款，均以正式确认文件为准。</p>
+    <p class="why-note" data-en="Events, wines, pricing, inventory, and payment terms are all subject to formal written confirmation.">活动、酒款、价格、库存及付款条款，均以正式确认文件为准。</p>
   </div>
 </section>
 
@@ -1280,8 +1295,8 @@
 <section id="membership" class="alt">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Membership · 法国骑士会员</div>
-      <h2>三档会员等级</h2>
+      <div class="kicker" data-en="Membership">Membership · 法国骑士会员</div>
+      <h2 data-en="Three Membership Plans">三档会员等级</h2>
       <div class="rule"></div>
     </div>
 
@@ -1290,63 +1305,63 @@
       <!-- TIER 1 -->
       <div class="tier">
         <div class="head">
-          <div class="level">会员方案 1 · 银爵</div>
-          <div class="name">本地骑士会员</div>
-          <div class="price">$5,000<small> / 人</small></div>
-          <div class="freq">洛杉矶本地活动 · 每年 2 次</div>
+          <div class="level" data-en="Plan 1 · Silver Membership">会员方案 1 · 银爵</div>
+          <div class="name" data-en="Local Knights’ Circle">本地骑士会员</div>
+          <div class="price">$5,000<small data-en=" / person"> / 人</small></div>
+          <div class="freq" data-en="Los Angeles local events · twice a year">洛杉矶本地活动 · 每年 2 次</div>
         </div>
         <ul class="body">
-          <li><span class="ck">✦</span><span>每年 2 次洛杉矶本地骑士主题活动</span></li>
-          <li><span class="ck">✦</span><span>会员专属社交晚宴与葡萄酒品鉴沙龙</span></li>
-          <li><span class="ck">✦</span><span>骑士会员身份认证与社群礼遇</span></li>
-          <li><span class="ck">✦</span><span>升级更高方案享专属折抵</span></li>
+          <li><span class="ck">✦</span><span data-en="Two Los Angeles-based wine culture events per year">每年 2 次洛杉矶本地骑士主题活动</span></li>
+          <li><span class="ck">✦</span><span data-en="Private social dinners and Bordeaux tasting salons">会员专属社交晚宴与葡萄酒品鉴沙龙</span></li>
+          <li><span class="ck">✦</span><span data-en="Member recognition and community access">骑士会员身份认证与社群礼遇</span></li>
+          <li><span class="ck">✦</span><span data-en="Upgrade credit toward higher-tier membership plans">升级更高方案享专属折抵</span></li>
         </ul>
-        <div class="fit"><b>适合谁</b>适合洛杉矶本地葡萄酒爱好者、希望参加高端品鉴沙龙与社交活动的人。</div>
+        <div class="fit" data-en="<b>Best for</b>Members who wish to begin with local private wine events and curated social gatherings in Los Angeles."><b>适合谁</b>适合洛杉矶本地葡萄酒爱好者、希望参加高端品鉴沙龙与社交活动的人。</div>
         <div class="foot">
-          <a href="#join" class="btn btn-ghost" style="border-color:var(--wine);color:var(--wine)">选择方案 1</a>
+          <a href="#join" class="btn btn-ghost" style="border-color:var(--wine);color:var(--wine)" data-en="Choose Plan 1">选择方案 1</a>
         </div>
       </div>
 
       <!-- TIER 2 (FEATURED) -->
       <div class="tier featured">
-        <div class="ribbon">最受欢迎</div>
+        <div class="ribbon" data-en="Most Popular">最受欢迎</div>
         <div class="head">
-          <div class="level">会员方案 2 · 金爵</div>
-          <div class="name">波尔多庄园骑士会员</div>
-          <div class="price">$20,000<small> / 一对夫妻</small></div>
-          <div class="freq">法国庄园贵族骑士活动 · 每年 1 次</div>
+          <div class="level" data-en="Plan 2 · Gold Membership">会员方案 2 · 金爵</div>
+          <div class="name" data-en="Bordeaux Château Experience">波尔多庄园骑士会员</div>
+          <div class="price">$20,000<small data-en=" / per couple"> / 一对夫妻</small></div>
+          <div class="freq" data-en="French château &amp; knights’ programme · once a year">法国庄园贵族骑士活动 · 每年 1 次</div>
         </div>
         <ul class="body">
-          <li><span class="ck">✦</span><span>法国 3 日深度漫游 + 漫步 11 世纪千年古镇</span></li>
-          <li><span class="ck">✦</span><span>赴一场贵族骑士古法盛宴</span></li>
-          <li><span class="ck">✦</span><span>会员权益含法国百年庄园三日接待（含食宿与活动安排）</span></li>
-          <li><span class="ck">✦</span><span>葡萄采收开幕庆典 + 名庄酒窖品鉴</span></li>
-          <li><span class="ck">✦</span><span>含方案 1 全部本地活动权益</span></li>
+          <li><span class="ck">✦</span><span data-en="A three-day journey through France + a walk in an 11th-century medieval town">法国 3 日深度漫游 + 漫步 11 世纪千年古镇</span></li>
+          <li><span class="ck">✦</span><span data-en="Attend a traditional knights’ gala dinner">赴一场贵族骑士古法盛宴</span></li>
+          <li><span class="ck">✦</span><span data-en="Three days of private château hospitality (accommodation, dining &amp; programme included)">会员权益含法国百年庄园三日接待（含食宿与活动安排）</span></li>
+          <li><span class="ck">✦</span><span data-en="Harvest opening celebration + grand château cellar tastings">葡萄采收开幕庆典 + 名庄酒窖品鉴</span></li>
+          <li><span class="ck">✦</span><span data-en="Includes all local benefits of Plan 1">含方案 1 全部本地活动权益</span></li>
         </ul>
-        <div class="fit"><b>适合谁</b>适合希望亲赴法国、体验圣埃美隆庆典、庄园接待和骑士文化的夫妻或家庭。</div>
+        <div class="fit" data-en="<b>Best for</b>Couples or families who wish to travel to France and experience the Saint-Émilion celebration, château hospitality, and knights’ culture."><b>适合谁</b>适合希望亲赴法国、体验圣埃美隆庆典、庄园接待和骑士文化的夫妻或家庭。</div>
         <div class="foot">
-          <a href="#join" class="btn btn-gold">选择方案 2</a>
+          <a href="#join" class="btn btn-gold" data-en="Choose Plan 2">选择方案 2</a>
         </div>
       </div>
 
       <!-- TIER 3 -->
       <div class="tier">
         <div class="head">
-          <div class="level">会员方案 3 · 御爵</div>
-          <div class="name">至尊私定礼遇会员</div>
-          <div class="price">$50,000<small> / 人</small></div>
-          <div class="freq">专属顶级私定礼遇 · 每年 1 次</div>
+          <div class="level" data-en="Plan 3 · Noir Membership">会员方案 3 · 御爵</div>
+          <div class="name" data-en="Bespoke Private Experience">至尊私定礼遇会员</div>
+          <div class="price">$50,000<small data-en=" / person"> / 人</small></div>
+          <div class="freq" data-en="Exclusive bespoke privileges · once a year">专属顶级私定礼遇 · 每年 1 次</div>
         </div>
         <ul class="body">
-          <li><span class="ck">✦</span><span>专属顶级私人定制行程</span></li>
-          <li><span class="ck">✦</span><span>私人管家与礼宾全程随行</span></li>
-          <li><span class="ck">✦</span><span>庄主级私宴与名流社交圈层礼遇</span></li>
-          <li><span class="ck">✦</span><span>稀有年份珍藏品鉴与私人收藏机会</span></li>
-          <li><span class="ck">✦</span><span>含方案 2 全部庄园与本地活动权益</span></li>
+          <li><span class="ck">✦</span><span data-en="A fully bespoke, top-tier private itinerary">专属顶级私人定制行程</span></li>
+          <li><span class="ck">✦</span><span data-en="A private butler and concierge throughout">私人管家与礼宾全程随行</span></li>
+          <li><span class="ck">✦</span><span data-en="Estate-owner private dinners and elite social access">庄主级私宴与名流社交圈层礼遇</span></li>
+          <li><span class="ck">✦</span><span data-en="Rare-vintage tastings and private collecting opportunities">稀有年份珍藏品鉴与私人收藏机会</span></li>
+          <li><span class="ck">✦</span><span data-en="Includes all château and local benefits of Plan 2">含方案 2 全部庄园与本地活动权益</span></li>
         </ul>
-        <div class="fit"><b>适合谁</b>适合高端收藏家、企业主、私人圈层社交客户，以及希望获得定制行程与稀缺酒款资源的人。</div>
+        <div class="fit" data-en="<b>Best for</b>Collectors, entrepreneurs, and private-circle clients seeking bespoke itineraries and access to rare wines. Details subject to confirmation."><b>适合谁</b>适合高端收藏家、企业主、私人圈层社交客户，以及希望获得定制行程与稀缺酒款资源的人。</div>
         <div class="foot">
-          <a href="#join" class="btn btn-ghost" style="border-color:var(--wine);color:var(--wine)">选择方案 3</a>
+          <a href="#join" class="btn btn-ghost" style="border-color:var(--wine);color:var(--wine)" data-en="Choose Plan 3">选择方案 3</a>
         </div>
       </div>
 
@@ -1359,37 +1374,41 @@
   <div class="container">
     <div class="section-head">
       <div class="kicker">Frequently Asked</div>
-      <h2>常见问题</h2>
+      <h2 data-en="Frequently Asked Questions">常见问题</h2>
       <div class="rule"></div>
     </div>
     <div class="faq">
       <details open>
-        <summary>圣埃美隆骑士团是什么？</summary>
-        <div class="ans">圣埃美隆酒会（Jurade de Saint-Émilion）创立于 1199 年，是法国最古老的行会组织之一，1948 年重返国际舞台。如今专注于推广圣埃美隆产区葡萄酒的贸易与文化。据酒会公开介绍，其成员遍布葡萄酒业界与社会各界（相关历史与数据以酒会官方说明为准）。</div>
+        <summary data-en="Is this a public travel tour?">圣埃美隆骑士团是什么？</summary>
+        <div class="ans" data-en="No. This is a private wine culture and membership experience, combining Bordeaux heritage, château hospitality, curated tastings, and selected social gatherings. The Jurade of Saint-Émilion, founded in 1199, is one of France’s oldest wine fraternities (historical details are subject to the official organization).">圣埃美隆酒会（Jurade de Saint-Émilion）创立于 1199 年，是法国最古老的行会组织之一，1948 年重返国际舞台。如今专注于推广圣埃美隆产区葡萄酒的贸易与文化。据酒会公开介绍，其成员遍布葡萄酒业界与社会各界（相关历史与数据以酒会官方说明为准）。</div>
       </details>
       <details>
-        <summary>成为会员可以参加哪些活动？</summary>
-        <div class="ans">每年 6 月花期开幕庆典（Fête de la Fleur）与 9 月葡萄采收开幕庆典（Ban des Vendanges）期间，均举行隆重的授勋仪式与贵族骑士盛宴。不同会员方案对应不同权益，详见上方「会员方案」。</div>
+        <summary data-en="Which events can members attend?">成为会员可以参加哪些活动？</summary>
+        <div class="ans" data-en="Investiture ceremonies and knights’ gala dinners are held during the June flowering celebration (Fête de la Fleur) and the September harvest opening (Ban des Vendanges). Each membership plan carries different benefits — see “Membership Plans” above.">每年 6 月花期开幕庆典（Fête de la Fleur）与 9 月葡萄采收开幕庆典（Ban des Vendanges）期间，均举行隆重的授勋仪式与贵族骑士盛宴。不同会员方案对应不同权益，详见上方「会员方案」。</div>
       </details>
       <details>
-        <summary>三档会员方案有何区别？</summary>
-        <div class="ans">方案 1（$5,000/人）含每年 2 次洛杉矶本地活动；方案 2（$20,000/一对夫妻）含法国 3 日深度漫游、千年古镇与贵族骑士古法盛宴；方案 3（$50,000/人）为专属顶级私人定制礼遇。高阶方案含低阶全部权益。</div>
+        <summary data-en="What are the differences between the three plans?">三档会员方案有何区别？</summary>
+        <div class="ans" data-en="Plan 1 ($5,000/person) includes two Los Angeles local events per year; Plan 2 ($20,000/couple) includes a three-day journey in France, a medieval town, and a traditional knights’ gala; Plan 3 ($50,000/person) is a fully bespoke private experience. Higher tiers include all benefits of the tiers below.">方案 1（$5,000/人）含每年 2 次洛杉矶本地活动；方案 2（$20,000/一对夫妻）含法国 3 日深度漫游、千年古镇与贵族骑士古法盛宴；方案 3（$50,000/人）为专属顶级私人定制礼遇。高阶方案含低阶全部权益。</div>
       </details>
       <details>
-        <summary>报名后多久会有人联系我？</summary>
-        <div class="ans">提交报名表后，我们的礼宾顾问通常会在 1–2 个工作日内与您联系，确认会员资格、行程细节与费用条款。</div>
+        <summary data-en="Are the wines included, and do I need to be an expert?">报名后多久会有人联系我？</summary>
+        <div class="ans" data-en="Wine availability, allocations, and purchases are handled separately and subject to vintage, inventory, and concierge confirmation. No expertise is required — the experience is designed for both enthusiasts and newcomers who appreciate culture and hospitality. After you submit the form, a concierge advisor typically contacts you within 1–2 business days.">提交报名表后，我们的礼宾顾问通常会在 1–2 个工作日内与您联系，确认会员资格、行程细节与费用条款。</div>
       </details>
       <details>
-        <summary>名额与费用如何安排？</summary>
-        <div class="ans">每年活动名额有限，按报名先后与会员等级安排。具体费用、付款方式、退改与合同条款，将由礼宾顾问在确认阶段以正式文件形式向您完整说明。</div>
+        <summary data-en="How are availability and fees arranged?">名额与费用如何安排？</summary>
+        <div class="ans" data-en="Places each year are limited and arranged by order of application and membership tier. Fees, payment methods, and cancellation and contract terms are explained in full by a concierge advisor during confirmation, in formal documentation. The Saint-Émilion ceremony and final itinerary are subject to official schedules and confirmation before travel.">每年活动名额有限，按报名先后与会员等级安排。具体费用、付款方式、退改与合同条款，将由礼宾顾问在确认阶段以正式文件形式向您完整说明。</div>
+      </details>
+      <details>
+        <summary data-en="Can English-speaking guests join?">英文客户可以参加吗？</summary>
+        <div class="ans" data-en="Yes. The website, the concierge service, and the guest experience support both Chinese-speaking and English-speaking guests.">可以。本网站、礼宾服务与整个客户体验均支持中文与英文客户。</div>
       </details>
     </div>
 
     <div class="trust-bar">
-      <div class="trust-item"><span class="ti">🏛️</span>1199 年创立 · 800+ 年传承</div>
-      <div class="trust-item"><span class="ti">👥</span>遍及全球的会员网络</div>
-      <div class="trust-item"><span class="ti">🌍</span>香港 · 上海 · 纽约举办仪式</div>
-      <div class="trust-item"><span class="ti">🎫</span>限量名额 · 礼宾全程服务</div>
+      <div class="trust-item"><span class="ti">🏛️</span><span data-en="Founded 1199 · 800+ years of heritage">1199 年创立 · 800+ 年传承</span></div>
+      <div class="trust-item"><span class="ti">👥</span><span data-en="A global member network">遍及全球的会员网络</span></div>
+      <div class="trust-item"><span class="ti">🌍</span><span data-en="Ceremonies in Hong Kong · Shanghai · New York">香港 · 上海 · 纽约举办仪式</span></div>
+      <div class="trust-item"><span class="ti">🎫</span><span data-en="Limited places · full concierge service">限量名额 · 礼宾全程服务</span></div>
     </div>
   </div>
 </section>
@@ -1399,166 +1418,214 @@
   <div class="container">
     <div class="section-head">
       <div class="kicker">Reserve Your Place</div>
-      <h2>立即登记 · 预留席位</h2>
+      <h2 data-en="Apply Now · Reserve Your Place">立即登记 · 预留席位</h2>
       <div class="rule"></div>
     </div>
-    <p class="lead" style="margin-bottom:40px">名额有限，敬请尽早登记。我们的礼宾顾问将在收到信息后与您联系，确认会员资格与行程细节。</p>
+    <p class="lead" style="margin-bottom:40px" data-en="Places are limited. A concierge advisor will contact you after receiving your details to confirm membership and itinerary.">名额有限，敬请尽早登记。我们的礼宾顾问将在收到信息后与您联系，确认会员资格与行程细节。</p>
     <div class="form-wrap">
       <form id="joinForm">
-        <label for="name">姓名 Name</label>
-        <input type="text" id="name" placeholder="请输入您的姓名" required>
+        <label for="name" data-en="Name">姓名</label>
+        <input type="text" id="name" placeholder="请输入您的姓名" data-en-ph="Your name" required>
 
-        <label for="phone">联系电话 Phone</label>
-        <input type="tel" id="phone" placeholder="请输入手机号码" required>
+        <label for="phone" data-en="Phone">联系电话</label>
+        <input type="tel" id="phone" placeholder="请输入手机号码" data-en-ph="Your phone number" required>
 
-        <label for="email">电子邮箱 Email</label>
-        <input type="email" id="email" placeholder="your@email.com" required>
+        <label for="email" data-en="Email">电子邮箱</label>
+        <input type="email" id="email" placeholder="your@email.com" data-en-ph="your@email.com" required>
 
-        <label>偏好联系方式 Preferred Contact Method</label>
+        <label data-en="Preferred Contact Method">偏好联系方式</label>
         <div class="chip-row">
-          <label class="chip"><input type="radio" name="contact" value="电话 Phone" checked>电话 Phone</label>
-          <label class="chip"><input type="radio" name="contact" value="邮箱 Email">邮箱 Email</label>
-          <label class="chip"><input type="radio" name="contact" value="微信 WeChat">微信 WeChat</label>
+          <label class="chip"><input type="radio" name="contact" value="电话 Phone" checked><span data-en="Phone">电话</span></label>
+          <label class="chip"><input type="radio" name="contact" value="邮箱 Email"><span data-en="Email">邮箱</span></label>
+          <label class="chip"><input type="radio" name="contact" value="微信 WeChat"><span data-en="WeChat">微信</span></label>
         </div>
 
-        <label>意向方向 Interested In（可多选）</label>
+        <label data-en="Interested In (select all that apply)">意向方向（可多选）</label>
         <div class="chip-row">
-          <label class="chip"><input type="checkbox" name="interest" value="葡萄酒采购 Wine Purchase">葡萄酒采购 Wine Purchase</label>
-          <label class="chip"><input type="checkbox" name="interest" value="洛杉矶品鉴 LA Tasting Event">洛杉矶品鉴 LA Tasting</label>
-          <label class="chip"><input type="checkbox" name="interest" value="波尔多之旅 Bordeaux Trip">波尔多之旅 Bordeaux Trip</label>
-          <label class="chip"><input type="checkbox" name="interest" value="会员计划 Membership">会员计划 Membership</label>
-          <label class="chip"><input type="checkbox" name="interest" value="尚未确定 Not Sure Yet">尚未确定 Not Sure Yet</label>
+          <label class="chip"><input type="checkbox" name="interest" value="葡萄酒采购 Wine Purchase"><span data-en="Wine Purchase">葡萄酒采购</span></label>
+          <label class="chip"><input type="checkbox" name="interest" value="洛杉矶品鉴 LA Tasting Event"><span data-en="LA Tasting Event">洛杉矶品鉴</span></label>
+          <label class="chip"><input type="checkbox" name="interest" value="波尔多之旅 Bordeaux Trip"><span data-en="Bordeaux Trip">波尔多之旅</span></label>
+          <label class="chip"><input type="checkbox" name="interest" value="会员计划 Membership"><span data-en="Membership">会员计划</span></label>
+          <label class="chip"><input type="checkbox" name="interest" value="尚未确定 Not Sure Yet"><span data-en="Not Sure Yet">尚未确定</span></label>
         </div>
 
-        <label for="tier">意向会员方案 Membership Tier</label>
+        <label for="tier" data-en="Interested Membership Plan">意向会员方案</label>
         <select id="tier">
-          <option>方案 1 · 银爵 $5,000/人（洛杉矶本地活动 2 次/年）</option>
-          <option selected>方案 2 · 金爵 $20,000/一对夫妻（法国庄园贵族骑士 3 天接待）</option>
-          <option>方案 3 · 御爵 $50,000/人（专属顶级私定礼遇）</option>
-          <option>尚未决定，希望顾问推荐</option>
+          <option data-en="Plan 1 · Silver $5,000/person (2 LA events/year)">方案 1 · 银爵 $5,000/人（洛杉矶本地活动 2 次/年）</option>
+          <option selected data-en="Plan 2 · Gold $20,000/couple (3-day château experience in France)">方案 2 · 金爵 $20,000/一对夫妻（法国庄园贵族骑士 3 天接待）</option>
+          <option data-en="Plan 3 · Noir $50,000/person (bespoke private experience)">方案 3 · 御爵 $50,000/人（专属顶级私定礼遇）</option>
+          <option data-en="Not decided — please advise">尚未决定，希望顾问推荐</option>
         </select>
 
-        <label for="guests">出行人数 Guests</label>
+        <label for="guests" data-en="Guests">出行人数</label>
         <select id="guests">
-          <option>1 位</option>
-          <option>2 位</option>
-          <option>3 位</option>
-          <option>4 位及以上</option>
+          <option data-en="1 guest">1 位</option>
+          <option data-en="2 guests">2 位</option>
+          <option data-en="3 guests">3 位</option>
+          <option data-en="4 or more">4 位及以上</option>
         </select>
 
-        <label for="selectedWine">意向酒款 Selected Wine</label>
-        <input type="text" id="selectedWine" placeholder="在上方酒单点击「咨询这款酒 / 预订整箱」会自动填入，也可手动填写">
+        <label for="selectedWine" data-en="Selected Wine">意向酒款</label>
+        <input type="text" id="selectedWine" placeholder="在上方酒单点击「咨询这款酒 / 预订整箱」会自动填入，也可手动填写" data-en-ph="Click “Enquire / Order a Case” on a wine above to fill automatically, or type here">
 
-        <label for="notes">留言 / 备注 Message / Notes</label>
-        <textarea id="notes" placeholder="如有特别需求、想咨询的酒款或行程，请在此说明"></textarea>
+        <label for="notes" data-en="Message / Notes">留言 / 备注</label>
+        <textarea id="notes" placeholder="如有特别需求、想咨询的酒款或行程，请在此说明" data-en-ph="Please share any specific requests, wines, or itinerary questions here"></textarea>
 
-        <button type="submit" class="btn btn-gold">提交申请 · Submit</button>
-        <p class="form-note">提交即表示您希望了解会员资格与酒款详情，我们将尽快与您联系。</p>
+        <button type="submit" class="btn btn-gold" data-en="Submit Inquiry">提交申请 · Submit</button>
+        <p class="form-note" data-en="By submitting, you indicate interest in learning more about membership and wine details. We will be in touch shortly.">提交即表示您希望了解会员资格与酒款详情，我们将尽快与您联系。</p>
       </form>
-      <div class="form-success" id="formSuccess">
-        ✦ 感谢您的登记！我们的礼宾顾问将尽快与您联系，确认 2026 波尔多庆典的专属席位。
+      <div class="form-success" id="formSuccess" data-en="✦ Thank you for your inquiry. A concierge advisor will contact you to confirm availability, itinerary details, and membership options.">
+        ✦ 感谢您的申请。礼宾顾问将与您联系，确认席位、行程与会员细节。
       </div>
     </div>
 
     <div class="share-row">
-      <button class="share-btn" onclick="copyLink()">🔗 复制链接</button>
-      <button class="share-btn" onclick="nativeShare()">📤 分享给好友</button>
+      <button class="share-btn" onclick="copyLink()" data-en="🔗 Copy Link">🔗 复制链接</button>
+      <button class="share-btn" onclick="nativeShare()" data-en="📤 Share">📤 分享给好友</button>
     </div>
-    <p class="form-note" id="shareTip">把本页分享给同样热爱法国葡萄酒文化的朋友，邀其一同成为骑士会员。</p>
+    <p class="form-note" id="shareTip" data-en="Share this page with friends who love French wine culture, and invite them to join.">把本页分享给同样热爱法国葡萄酒文化的朋友，邀其一同成为骑士会员。</p>
   </div>
 </section>
 
 <footer>
   <div class="brand">VIGNES DU SOLEIL</div>
-  <p>圣埃美隆骑士盛宴 · 2026 波尔多葡萄采收开幕庆典 · 三日庄园之旅</p>
-  <p>会员与合作咨询 · Sophia Li　|
+  <p data-en="Saint-Émilion Knights’ Celebration · Bordeaux Harvest 2026 · A Three-Day Château Journey">圣埃美隆骑士盛宴 · 2026 波尔多葡萄采收开幕庆典 · 三日庄园之旅</p>
+  <p><span data-en="Membership &amp; partnership · Sophia Li">会员与合作咨询 · Sophia Li</span>　|
      <a href="tel:+19493107358" style="color:var(--gold-soft)">+1 (949) 310-7358</a>　|
      <a href="mailto:sophia081927@gmail.com" style="color:var(--gold-soft)">sophia081927@gmail.com</a></p>
-  <p class="fine">
-    本网站仅面向 21 岁及以上成年人。所有酒类购买、配送及活动参与须遵守所在地酒类法规。
-    所有会员资格、活动名额、行程安排、酒款年份、库存、价格、付款方式及退改条款，均以正式确认文件及双方签署协议为准。
-  </p>
-  <p class="fine" style="opacity:.42;margin-top:12px">
-    This website is intended for adults aged 21 and over. All wine purchases, shipments, and event participation must comply with
-    applicable alcohol laws and regulations. Membership eligibility, event availability, itineraries, wine vintages, inventory,
-    pricing, payment terms, and cancellation policies are subject to formal confirmation and written agreement.
+  <p class="fine" data-en="This website is for cultural experience, membership inquiry, and event information purposes only. Wine vintages, pricing, inventory, ratings, itinerary details, event availability, and official ceremony arrangements are subject to final confirmation. Wine purchase and delivery must comply with applicable local laws and regulations. This website is intended for adults aged 21 and over. Please enjoy responsibly.">
+    本网站内容仅供文化体验、会员咨询与活动信息参考。酒款年份、价格、库存、评分、行程、活动席位及官方仪式安排，均以最终确认为准。
+    酒类购买与配送须遵守所在地区法律法规。本网站仅面向 21 岁及以上成年人。请理性饮酒。
   </p>
 </footer>
 
 <!-- 手机端常驻报名条 -->
 <div class="sticky-cta">
-  <div class="txt"><b>成为会员</b> · 即可参加 2026 波尔多盛典</div>
-  <a href="#join" class="btn btn-gold">立即报名</a>
+  <div class="txt" data-en="<b>Become a Member</b> · Join the 2026 Bordeaux celebration"><b>成为会员</b> · 即可参加 2026 波尔多盛典</div>
+  <a href="#join" class="btn btn-gold" data-en="Apply Now">立即报名</a>
 </div>
 
 <script>
+  var LANG_KEY = 'vds_lang';
+  var I18N_TITLE = {
+    zh: 'Vignes du Soleil · 圣埃美隆骑士盛宴 · 2026 波尔多葡萄采收开幕庆典',
+    en: "Vignes du Soleil · Saint-Émilion Knights' Celebration · Bordeaux Harvest 2026"
+  };
+  var I18N_DESC = {
+    zh: '加入圣埃美隆骑士团（Jurade de Saint-Émilion），赴 2026 法国波尔多葡萄采收开幕庆典与贵族骑士盛宴，入住百年庄园，三日庄园之旅。三档会员方案，限量名额。',
+    en: "A private Bordeaux wine culture, château hospitality, and membership experience — the Saint-Émilion knights' celebration, château-direct wine selections, and Los Angeles tasting salons."
+  };
+  var WINE_BTN = { zh: ['咨询这款酒','预订整箱','加入品鉴清单'], en: ['Enquire','Order a Case','Add to Tasting List'] };
+  window.CURRENT_LANG = 'zh';
+
+  // ---- form submit ----
   document.getElementById('joinForm').addEventListener('submit', function(e){
     e.preventDefault();
     this.style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-    document.getElementById('formSuccess').scrollIntoView({behavior:'smooth',block:'center'});
+    var s = document.getElementById('formSuccess');
+    s.style.display = 'block';
+    s.scrollIntoView({behavior:'smooth',block:'center'});
   });
 
-  // ---- 为每款酒注入行动按钮：咨询 / 预订整箱 / 加入品鉴清单 ----
+  // ---- inject per-wine action buttons ----
   (function(){
-    var cards = document.querySelectorAll('#wines .wine');
-    cards.forEach(function(card){
-      var nameEl = card.querySelector('.wname');
-      if(!nameEl) return;
-      var name = nameEl.textContent.trim();
-      var bar = document.createElement('div');
-      bar.className = 'wactions';
-      var b1 = document.createElement('button'); b1.type='button'; b1.className='wbtn primary'; b1.textContent='咨询这款酒';
-      var b2 = document.createElement('button'); b2.type='button'; b2.className='wbtn'; b2.textContent='预订整箱';
-      var b3 = document.createElement('button'); b3.type='button'; b3.className='wbtn'; b3.textContent='加入品鉴清单';
-      b1.addEventListener('click', function(){ pickWine(name, '咨询'); });
-      b2.addEventListener('click', function(){ pickWine(name, '整箱'); });
-      b3.addEventListener('click', function(){ pickWine(name, '品鉴清单'); });
+    document.querySelectorAll('#wines .wine').forEach(function(card){
+      if(!card.querySelector('.wname')) return;
+      var bar = document.createElement('div'); bar.className = 'wactions';
+      var b1 = document.createElement('button'), b2 = document.createElement('button'), b3 = document.createElement('button');
+      [b1,b2,b3].forEach(function(b){ b.type='button'; b.className='wbtn'; });
+      b1.className = 'wbtn primary';
+      b1.addEventListener('click', function(){ pickWine(cardName(card), 'consult'); });
+      b2.addEventListener('click', function(){ pickWine(cardName(card), 'case'); });
+      b3.addEventListener('click', function(){ pickWine(cardName(card), 'list'); });
       bar.appendChild(b1); bar.appendChild(b2); bar.appendChild(b3);
       card.appendChild(bar);
     });
+    relabelWineButtons(window.CURRENT_LANG);
   })();
 
-  function pickWine(name, action){
-    var sel = document.getElementById('selectedWine');
-    if(!sel) return;
-    var entry = (action === '咨询') ? name : name + '（' + action + '）';
-    var items = sel.value.trim() ? sel.value.split('；').map(function(s){return s.trim();}).filter(Boolean) : [];
+  function cardName(card){ var n = card.querySelector('.wname'); return n ? n.textContent.trim() : ''; }
+
+  function relabelWineButtons(lang){
+    var L = WINE_BTN[lang] || WINE_BTN.zh;
+    document.querySelectorAll('#wines .wine .wactions').forEach(function(bar){
+      var bs = bar.querySelectorAll('.wbtn');
+      if(bs[0]) bs[0].textContent = L[0];
+      if(bs[1]) bs[1].textContent = L[1];
+      if(bs[2]) bs[2].textContent = L[2];
+    });
+  }
+
+  function pickWine(name, mode){
+    var sel = document.getElementById('selectedWine'); if(!sel) return;
+    var en = window.CURRENT_LANG === 'en';
+    var suffix = mode === 'consult' ? '' : (en ? (mode === 'case' ? ' (Case)' : ' (Tasting List)') : (mode === 'case' ? '（整箱）' : '（品鉴清单）'));
+    var entry = name + suffix;
+    var items = sel.value.trim() ? sel.value.split(/；|;\s*/).map(function(s){return s.trim();}).filter(Boolean) : [];
     if(items.indexOf(entry) === -1) items.push(entry);
-    sel.value = items.join('；');
-    // 勾选「葡萄酒采购」意向
+    sel.value = items.join(en ? '; ' : '；');
     var wp = document.querySelector('input[name="interest"][value="葡萄酒采购 Wine Purchase"]');
     if(wp) wp.checked = true;
-    // 滚动到报名表并高亮该字段
     document.getElementById('join').scrollIntoView({behavior:'smooth', block:'start'});
     sel.classList.add('glow');
     setTimeout(function(){ try{ sel.focus({preventScroll:true}); }catch(e){ sel.focus(); } }, 600);
     setTimeout(function(){ sel.classList.remove('glow'); }, 2200);
   }
 
+  // ===== bilingual engine =====
+  function initI18n(){
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      if(!el.hasAttribute('data-zh')) el.setAttribute('data-zh', el.innerHTML);
+    });
+    document.querySelectorAll('[data-en-ph]').forEach(function(el){
+      if(!el.hasAttribute('data-zh-ph')) el.setAttribute('data-zh-ph', el.getAttribute('placeholder') || '');
+    });
+  }
+  function applyLang(lang){
+    var en = lang === 'en';
+    window.CURRENT_LANG = lang;
+    document.documentElement.lang = en ? 'en' : 'zh-CN';
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      var v = en ? el.getAttribute('data-en') : el.getAttribute('data-zh');
+      if(v !== null) el.innerHTML = v;
+    });
+    document.querySelectorAll('[data-en-ph]').forEach(function(el){
+      el.setAttribute('placeholder', en ? el.getAttribute('data-en-ph') : el.getAttribute('data-zh-ph'));
+    });
+    document.title = en ? I18N_TITLE.en : I18N_TITLE.zh;
+    var md = document.querySelector('meta[name="description"]'); if(md) md.setAttribute('content', en ? I18N_DESC.en : I18N_DESC.zh);
+    document.querySelectorAll('.lang-btn').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang') === lang); });
+    relabelWineButtons(lang);
+    try{ localStorage.setItem(LANG_KEY, lang); }catch(e){}
+  }
+  function setLang(lang){ applyLang(lang); }
+
+  initI18n();
+  (function(){
+    var saved = null; try{ saved = localStorage.getItem(LANG_KEY); }catch(e){}
+    var nl = (navigator.language || navigator.userLanguage || '').toLowerCase();
+    applyLang(saved || (nl.indexOf('en') === 0 ? 'en' : 'zh'));
+  })();
+
+  // ---- share ----
   function copyLink(){
-    var url = window.location.href;
-    var tip = document.getElementById('shareTip');
+    var url = window.location.href, tip = document.getElementById('shareTip'), en = window.CURRENT_LANG === 'en';
     if(navigator.clipboard && navigator.clipboard.writeText){
       navigator.clipboard.writeText(url).then(function(){
-        tip.textContent = '✦ 链接已复制，快粘贴分享给好友吧！';
-      }, function(){ tip.textContent = '请手动复制浏览器地址栏链接分享。'; });
+        tip.textContent = en ? '✦ Link copied — paste to share with friends!' : '✦ 链接已复制，快粘贴分享给好友吧！';
+      }, function(){ tip.textContent = en ? 'Please copy the URL from the address bar to share.' : '请手动复制浏览器地址栏链接分享。'; });
     } else {
-      tip.textContent = '请手动复制浏览器地址栏链接分享。';
+      tip.textContent = en ? 'Please copy the URL from the address bar to share.' : '请手动复制浏览器地址栏链接分享。';
     }
   }
-
   function nativeShare(){
+    var en = window.CURRENT_LANG === 'en';
     var data = {
-      title: 'Vignes du Soleil · 圣埃美隆骑士盛宴',
-      text: '2026 波尔多葡萄采收开幕庆典 · 贵族骑士盛宴 · 三日庄园之旅。成为会员即可参加。',
+      title: "Vignes du Soleil · Saint-Émilion",
+      text: en ? 'A private Bordeaux wine culture & membership experience.' : '2026 波尔多葡萄采收开幕庆典 · 贵族骑士盛宴 · 三日庄园之旅。',
       url: window.location.href
     };
-    if(navigator.share){
-      navigator.share(data).catch(function(){});
-    } else {
-      copyLink();
-    }
+    if(navigator.share){ navigator.share(data).catch(function(){}); } else { copyLink(); }
   }
 </script>
 
