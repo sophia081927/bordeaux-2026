@@ -550,6 +550,20 @@
   .chip:has(input:checked){background:rgba(201,162,75,.2);border-color:var(--gold);color:var(--wine);font-weight:600}
   #selectedWine.glow{border-color:var(--gold);background:rgba(201,162,75,.16);box-shadow:0 0 0 3px rgba(201,162,75,.25)}
 
+  /* ============ PRICE GATING ============ */
+  .price-lock{display:none;align-items:center;gap:6px;cursor:pointer;
+    font-size:12.5px;color:var(--wine);font-weight:600;letter-spacing:.02em;
+    background:rgba(184,144,71,.15);border:1px solid rgba(184,144,71,.55);
+    border-radius:30px;padding:6px 13px;transition:background .2s,border-color .2s;white-space:nowrap;}
+  .price-lock:hover{background:rgba(184,144,71,.28);border-color:var(--gold)}
+  body.prices-locked .wine .wfoot .price,
+  body.prices-locked .wine .wfoot .case,
+  body.prices-locked .tier .head .price{display:none}
+  body.prices-locked .wine .wfoot .price-lock{display:inline-flex}
+  body.prices-locked .tier .head .price-lock{display:inline-flex;margin:14px auto 0;
+    color:var(--gold-soft);background:rgba(255,255,255,.08);border-color:rgba(212,183,126,.6)}
+  .tier .head .price-lock:hover{background:rgba(255,255,255,.16)}
+
   /* ============ FOOTER ============ */
   footer{
     background:var(--wine-deep);color:var(--cream);text-align:center;
@@ -1274,8 +1288,8 @@
 
     </div>
 
-    <p class="wine-note" data-en="Prices shown are member reference prices (USD), sold by the case. Vintages, formats, and inventory are subject to concierge confirmation.<br>Members enjoy château-direct pricing and priority allocation — please leave your details in the form below.">
-      以上为会员甄选参考价（美元），整箱起售；年份、规格与库存以礼宾顾问确认为准。<br>
+    <p class="wine-note" data-en="Member selection, sold by the case. Pricing is shared after registration by a concierge advisor; vintages, formats, and inventory are subject to confirmation.<br>Members enjoy château-direct pricing and priority allocation — please leave your details in the form below.">
+      会员甄选酒款，整箱起售；价格于登记后由礼宾顾问提供，年份、规格与库存以确认为准。<br>
       会员尊享庄园直采价与优先配额，详情请于下方「立即报名」留下信息。
     </p>
   </div>
@@ -1416,7 +1430,7 @@
       </details>
       <details>
         <summary data-en="What are the differences between the three plans?">三档会员方案有何区别？</summary>
-        <div class="ans" data-en="Plan 1 ($5,000/person) includes two Los Angeles local events per year; Plan 2 ($20,000/couple) includes a three-day journey in France, a medieval town, and a traditional knights’ gala; Plan 3 ($50,000/person) is a fully bespoke private experience. Higher tiers include all benefits of the tiers below.">方案 1（$5,000/人）含每年 2 次洛杉矶本地活动；方案 2（$20,000/一对夫妻）含法国 3 日深度漫游、千年古镇与贵族骑士古法盛宴；方案 3（$50,000/人）为专属顶级私人定制礼遇。高阶方案含低阶全部权益。</div>
+        <div class="ans" data-en="Plan 1 (Silver) includes two Los Angeles local events per year; Plan 2 (Gold) includes a three-day journey in France, a medieval town, and a traditional knights’ gala; Plan 3 (Noir) is a fully bespoke private experience. Higher tiers include all benefits of the tiers below. Pricing is shared by a concierge advisor after registration.">方案 1（银爵）含每年 2 次洛杉矶本地活动；方案 2（金爵）含法国 3 日深度漫游、千年古镇与贵族骑士古法盛宴；方案 3（御爵）为专属顶级私人定制礼遇。高阶方案含低阶全部权益；具体价格由礼宾顾问在登记后提供。</div>
       </details>
       <details>
         <summary data-en="Are the wines included, and do I need to be an expert?">报名后多久会有人联系我？</summary>
@@ -1479,9 +1493,9 @@
 
         <label for="tier" data-en="Interested Membership Plan">意向会员方案</label>
         <select id="tier">
-          <option data-en="Plan 1 · Silver $5,000/person (2 LA events/year)">方案 1 · 银爵 $5,000/人（洛杉矶本地活动 2 次/年）</option>
-          <option selected data-en="Plan 2 · Gold $20,000/couple (3-day château experience in France)">方案 2 · 金爵 $20,000/一对夫妻（法国庄园贵族骑士 3 天接待）</option>
-          <option data-en="Plan 3 · Noir $50,000/person (bespoke private experience)">方案 3 · 御爵 $50,000/人（专属顶级私定礼遇）</option>
+          <option data-en="Plan 1 · Silver (2 LA events / year)">方案 1 · 银爵（洛杉矶本地活动 2 次/年）</option>
+          <option selected data-en="Plan 2 · Gold (3-day château experience in France)">方案 2 · 金爵（法国庄园贵族骑士 3 天接待）</option>
+          <option data-en="Plan 3 · Noir (bespoke private experience)">方案 3 · 御爵（专属顶级私定礼遇）</option>
           <option data-en="Not decided — please advise">尚未决定，希望顾问推荐</option>
         </select>
 
@@ -1562,11 +1576,38 @@
   // ---- form submit ----
   document.getElementById('joinForm').addEventListener('submit', function(e){
     e.preventDefault();
+    if(window.unlockPrices) window.unlockPrices();
     this.style.display = 'none';
     var s = document.getElementById('formSuccess');
     s.style.display = 'block';
     s.scrollIntoView({behavior:'smooth',block:'center'});
   });
+
+  // ---- 价格登记后可见（gate prices behind registration） ----
+  (function(){
+    var KEY = 'vds_prices';
+    var unlocked = false; try{ unlocked = localStorage.getItem(KEY) === 'unlocked'; }catch(e){}
+    if(!unlocked) document.body.classList.add('prices-locked');
+    function makeLock(){
+      var d = document.createElement('div'); d.className = 'price-lock';
+      d.innerHTML = '🔒 <span class="pl-txt">登记后可见</span>';
+      d.addEventListener('click', function(){
+        var j = document.getElementById('join'); if(j) j.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+      return d;
+    }
+    document.querySelectorAll('#wines .wine .wfoot').forEach(function(f){ f.appendChild(makeLock()); });
+    document.querySelectorAll('#membership .tier .head').forEach(function(h){ h.appendChild(makeLock()); });
+    window.updatePriceLocks = function(){
+      var en = window.CURRENT_LANG === 'en';
+      document.querySelectorAll('.price-lock .pl-txt').forEach(function(s){ s.textContent = en ? 'Register to view' : '登记后可见'; });
+    };
+    window.updatePriceLocks();
+    window.unlockPrices = function(){
+      document.body.classList.remove('prices-locked');
+      try{ localStorage.setItem(KEY, 'unlocked'); }catch(e){}
+    };
+  })();
 
   // ---- inject per-wine action buttons ----
   (function(){
@@ -1638,6 +1679,7 @@
     document.querySelectorAll('.lang-btn').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-lang') === lang); });
     relabelWineButtons(lang);
     if(window.updateMusicUI) window.updateMusicUI();
+    if(window.updatePriceLocks) window.updatePriceLocks();
     try{ localStorage.setItem(LANG_KEY, lang); }catch(e){}
   }
   function setLang(lang){ applyLang(lang); }
